@@ -1,10 +1,10 @@
 {
-  "name":         "qutic-base",
+  "name":         "qutic-php71",
   "version":      "17.3.0",
-  "description":  "qutic base image",
+  "description":  "qutic php71 image",
   "organization": "qutic development",
   "brand":        "Instance",
-  "homepage":     "https://github.com/jfqd/mi-qutic-base",
+  "homepage":     "https://github.com/jfqd/mi-qutic-php71",
   "base":         "fe009b1e-d2d1-11e7-b5f6-6b650b6b2e69",
   "customer_metadata": {
     "admin_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the admin user"},

@@ -1,14 +1,11 @@
 # List packages to add to your image one per line.
-# tools
-gsed
+#
 # php
 php71-fpm
 php71-pdo
 php71-pdo_mysql
 php71-pdo_sqlite
 php71-zlib
-php71-uploadprogress
-php71-soap
 php71-posix
 php71-pear
 php71-pear-Net_SMTP
@@ -16,12 +13,10 @@ php71-pear-Mail_Mime
 php71-pear-HTTP_Request
 php71-pear-HTTP
 php71-mysqli
-php71-mysql
-php71-mcrypt
+php71-pecl-mcrypt
 php71-mbstring
 php71-json
 php71-intl
-php71-imagick
 php71-iconv
 php71-gd
 php71-exif
@@ -33,8 +28,7 @@ php71-ftp
 php71-opcache
 php71-imap
 # sql
-percona-client-5.6
+percona-client-5.6.36
 # web
-apache-2.4
 ap24-php71
 ap24-usdt
