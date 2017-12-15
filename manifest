@@ -1,0 +1,8 @@
+name="qutic-owncloud-64"
+organization="qutic development"
+brand="Instance"
+version="17.3.0"
+description="qutic worker image"
+homepage="https://github.com/jfqd/mi-qutic-owncloud"
+users="root admin owncloud"
+base="fe009b1e-d2d1-11e7-b5f6-6b650b6b2e69"
