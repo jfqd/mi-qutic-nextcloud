@@ -16,6 +16,14 @@ TEMPLATE_ZONE_UUID=$(vmadm lookup alias='qutic-base-template-zone')
 ../bin/build_smartos $BASE64_IMAGE_UUID $TEMPLATE_ZONE_UUID mi-qutic-php71
 ```
 
+## upload image to dsapid
+
+```
+curl -v -u your-secure-admin-token: https://dsapid.example.com/api/upload /
+  -F manifest=@/opt/mibe/images/qutic-php71-17.3.0-dsapi.dsmanifest /
+  -F file=@/opt/mibe/images/qutic-php71-17.3.0.zfs.gz
+```
+
 ## mdata variables
 
 See [mi-qutic-base Readme](https://github.com/jfqd/mi-qutic-base/blob/master/README.md) for a list of usable metadata.

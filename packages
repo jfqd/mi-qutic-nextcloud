@@ -1,7 +1,6 @@
 # List packages to add to your image one per line.
 #
 # php
-php71-fpm
 php71-pdo
 php71-pdo_mysql
 php71-pdo_sqlite
