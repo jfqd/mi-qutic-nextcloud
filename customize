@@ -36,7 +36,6 @@ echo "* Activate munin plugins"
 
 # Clean up
 echo "* Cleaning up."
-rm -rf /root/*
 
 # Prepare image for provisioning
 sm-prepare-image -y

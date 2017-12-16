@@ -65,7 +65,8 @@ vmadm create << EOF
     "mail_auth_user":        "you@example.com",
     "mail_auth_pass":        "smtp-account-password",
     "mail_adminaddr":        "report@example.com",
-    "munin_master_allow":    "munin-master-ip"
+    "munin_master_allow":    "munin-master-ip",
+    "vfstab":                "storage.example.com:/export/data    -       /data    nfs     -       yes     rw,bg,intr"
   }
 }
 EOF
