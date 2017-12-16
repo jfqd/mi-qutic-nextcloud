@@ -1,6 +1,6 @@
 {
   "name":         "qutic-nextcloud",
-  "version":      "17.3.0",
+  "version":      "17.3.1",
   "description":  "qutic nextcloud image",
   "organization": "qutic development",
   "brand":        "nextcloud instance",
@@ -24,6 +24,6 @@
     "vfstab":                {"type": "text", "description": "nfs mountpoint for vfstab-file"},
     "server_name":           {"type": "text", "description": "nextcloud server-name"},
     "data_path":             {"type": "text", "description": "path of the nextcloud data directory"},
-    "config_copy_path":      {"type": "text", "description": "path of the nextcloud config.php file to copy into place"}
+    "config_path":           {"type": "text", "description": "path of the nextcloud config directory"}
   }
 }

@@ -2,6 +2,7 @@
 
 ## 17.3.1
 
+* change config-path handling
 * handle vfstab extensions
 
 ## 17.3.0

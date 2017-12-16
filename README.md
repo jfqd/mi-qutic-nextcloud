@@ -68,8 +68,8 @@ vmadm create << EOF
     "munin_master_allow":    "munin-master-ip",
     "vfstab":                "storage.example.com:/export/data    -       /data    nfs     -       yes     rw,bg,intr",
     "server_name":           "www.example.com",
-    "data_path":             "/data",
-    "config_copy_path":      "/data/config.php" 
+    "data_path":             "/data/shared/data",
+    "config_copy_path":      "/data/shared/config" 
   }
 }
 EOF
