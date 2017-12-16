@@ -37,7 +37,7 @@ curl -L -O https://download.qutic.com/src/nextcloud/nextcloud-11.0.6.tar.bz2
 tar xf nextcloud-11.0.6.tar.bz2
 rm nextcloud-11.0.6.tar.bz2
 mv nextcloud nc-11.0.6
-cd 11.0.6
+cd nc-11.0.6
 rm -rf config
 ln -nfs /opt/local/share/httpd/nextcloud/shared/config config
 
@@ -66,7 +66,7 @@ ln -nfs /opt/local/share/httpd/nextcloud/releases/nc-11.0.6 current
 chown -R www:www /opt/local/share/httpd/nextcloud
 
 echo "* Change www for cronjobs"
-usermod -d /opt/local/share/httpd/nextcloud/current -s /usr/bin/bash www
+usermod -d /opt/local/share/httpd/nextcloud -s /usr/bin/bash www
 
 echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
