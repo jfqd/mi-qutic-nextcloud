@@ -1,9 +1,9 @@
 {
-  "name":         "qutic-php71",
-  "version":      "17.3.1",
-  "description":  "qutic php71 image",
+  "name":         "qutic-nextcloud",
+  "version":      "17.3.0",
+  "description":  "qutic nextcloud image",
   "organization": "qutic development",
-  "brand":        "Instance",
+  "brand":        "nextcloud instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-php71",
   "base":         "1d7b7f12-e25f-11e7-b7ed-c30dabac2a63",
   "customer_metadata": {
@@ -21,6 +21,9 @@
     "ssh_host_dsa_key":      {"type": "text", "description": "private SSH dsa key for the host daemon"},
     "ssh_host_dsa_key.pub":  {"type": "text", "description": "public SSH dsa key for the host daemon"},
     "munin_master_allow":    {"type": "text", "description": "ip addresses (alternative hostname) of the munin master node"},
-    "vfstab":                {"type": "text", "description": "nfs mountpoint for vfstab-file"}
+    "vfstab":                {"type": "text", "description": "nfs mountpoint for vfstab-file"},
+    "server_name":           {"type": "text", "description": "nextcloud server-name"},
+    "data_path":             {"type": "text", "description": "path of the nextcloud data directory"},
+    "config_copy_path":      {"type": "text", "description": "path of the nextcloud config.php file to copy into place"}
   }
 }

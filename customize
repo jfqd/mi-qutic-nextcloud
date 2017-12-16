@@ -25,11 +25,48 @@ httpd-userdir.conf
 httpd-vhosts.conf"
 
 for CONF_RM in ${HTTPD_CONF_RM}; do
-	rm -f /opt/local/etc/httpd/${CONF_RM}
+  rm -f /opt/local/etc/httpd/${CONF_RM}
 done
 
-echo "* Change www user to /var/www for cronjobs"
-usermod -d /var/www www
+echo "* Setup nextcloud"
+mkdir -p /opt/local/share/httpd/nextcloud/releases
+mkdir -p /opt/local/share/httpd/nextcloud/shared/config
+
+cd /opt/local/share/httpd/nextcloud/releases
+curl -L -O https://download.qutic.com/src/nextcloud/nextcloud-11.0.6.tar.bz2
+tar xf nextcloud-11.0.6.tar.bz2
+rm nextcloud-11.0.6.tar.bz2
+mv nextcloud nc-11.0.6
+cd 11.0.6
+rm -rf config
+ln -nfs /opt/local/share/httpd/nextcloud/shared/config config
+
+cd apps
+curl -L -O https://download.qutic.com/src/nextcloud/calendar.tar.gz
+curl -L -O https://download.qutic.com/src/nextcloud/contacts.tar.gz
+curl -L -O https://download.qutic.com/src/nextcloud/tasks.tar.gz
+curl -L -O https://download.qutic.com/src/nextcloud/deck.tar.gz
+curl -L -O https://download.qutic.com/src/nextcloud/news.tar.gz
+
+tar xf calendar.tar.gz
+tar xf contacts.tar.gz
+tar xf tasks.tar.gz
+tar xf deck.tar.gz
+tar xf news.tar.gz
+
+rm calendar.tar.gz
+rm contacts.tar.gz
+rm tasks.tar.gz
+rm deck.tar.gz
+rm news.tar.gz
+
+cd /opt/local/share/httpd/nextcloud/
+ln -nfs /opt/local/share/httpd/nextcloud/releases/nc-11.0.6 current
+
+chown -R www:www /opt/local/share/httpd/nextcloud
+
+echo "* Change www for cronjobs"
+usermod -d /opt/local/share/httpd/nextcloud/current -s /usr/bin/bash www
 
 echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
