@@ -5,6 +5,8 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any commands fail
 set -o errexit
 
+NEXTCLOUD_VERSION="11.0.6"
+
 MUNIN_PLUGINS="
 	apache_accesses
 	apache_processes
@@ -32,11 +34,11 @@ echo "* Setup nextcloud"
 mkdir -p /opt/local/share/httpd/nextcloud/releases
 
 cd /opt/local/share/httpd/nextcloud/releases
-curl -L -O https://download.qutic.com/src/nextcloud/nextcloud-11.0.6.tar.bz2
-tar xf nextcloud-11.0.6.tar.bz2
-rm nextcloud-11.0.6.tar.bz2
-mv nextcloud nc-11.0.6
-cd nc-11.0.6
+curl -L -O https://download.qutic.com/src/nextcloud/nextcloud-$NEXTCLOUD_VERSION.tar.bz2
+tar xf nextcloud-$NEXTCLOUD_VERSION.tar.bz2
+rm nextcloud-$NEXTCLOUD_VERSION.tar.bz2
+mv nextcloud nc-$NEXTCLOUD_VERSION
+cd nc-$NEXTCLOUD_VERSION
 rm -rf config
 
 cd apps
@@ -45,21 +47,24 @@ curl -L -O https://download.qutic.com/src/nextcloud/contacts.tar.gz
 curl -L -O https://download.qutic.com/src/nextcloud/tasks.tar.gz
 curl -L -O https://download.qutic.com/src/nextcloud/deck.tar.gz
 curl -L -O https://download.qutic.com/src/nextcloud/news.tar.gz
+curl -L -O https://download.qutic.com/src/nextcloud/polls.tar.gz
 
 tar xf calendar.tar.gz
 tar xf contacts.tar.gz
 tar xf tasks.tar.gz
 tar xf deck.tar.gz
 tar xf news.tar.gz
+tar xf polls.tar.gz
 
 rm calendar.tar.gz
 rm contacts.tar.gz
 rm tasks.tar.gz
 rm deck.tar.gz
 rm news.tar.gz
+rm polls.tar.gz
 
 cd /opt/local/share/httpd/nextcloud/
-ln -nfs /opt/local/share/httpd/nextcloud/releases/nc-11.0.6 current
+ln -nfs /opt/local/share/httpd/nextcloud/releases/nc-$NEXTCLOUD_VERSION current
 
 chown -R www:www /opt/local/share/httpd/nextcloud
 
