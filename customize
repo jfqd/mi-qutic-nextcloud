@@ -30,7 +30,6 @@ done
 
 echo "* Setup nextcloud"
 mkdir -p /opt/local/share/httpd/nextcloud/releases
-mkdir -p /opt/local/share/httpd/nextcloud/shared/config
 
 cd /opt/local/share/httpd/nextcloud/releases
 curl -L -O https://download.qutic.com/src/nextcloud/nextcloud-11.0.6.tar.bz2
@@ -39,7 +38,6 @@ rm nextcloud-11.0.6.tar.bz2
 mv nextcloud nc-11.0.6
 cd nc-11.0.6
 rm -rf config
-ln -nfs /opt/local/share/httpd/nextcloud/shared/config config
 
 cd apps
 curl -L -O https://download.qutic.com/src/nextcloud/calendar.tar.gz
@@ -73,6 +71,7 @@ echo "* Activate munin plugins"
 
 # Clean up
 echo "* Cleaning up."
+rm /root/customize
 
 # Prepare image for provisioning
 sm-prepare-image -y
