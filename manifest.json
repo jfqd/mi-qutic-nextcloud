@@ -5,7 +5,7 @@
   "organization": "qutic development",
   "brand":        "nextcloud instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-php71",
-  "base":         "1d7b7f12-e25f-11e7-b7ed-c30dabac2a63",
+  "base":         "e46a0d60-e579-11e7-a2b1-0b33b7436da4",
   "customer_metadata": {
     "admin_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the admin user"},
     "root_authorized_keys":  {"type": "text", "description": "SSH public authorized key(s) for the root user"},
