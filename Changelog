@@ -1,5 +1,11 @@
 # Changelog
 
+## 17.3.2
+
+* add php71-apcu package
+* add cronjobs for nextcloud
+* extend ipf.conf
+
 ## 17.3.1
 
 * change config-path handling

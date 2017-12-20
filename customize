@@ -74,6 +74,9 @@ usermod -d /opt/local/share/httpd/nextcloud -s /usr/bin/bash www
 echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
+# echo "* Enable ipfilter"
+# svcadm enable svc:/network/ipfilter:default
+
 # Clean up
 echo "* Cleaning up."
 rm /root/customize

@@ -74,3 +74,7 @@ vmadm create << EOF
 }
 EOF
 ```
+
+## todo
+
+* Truncate Apache log
