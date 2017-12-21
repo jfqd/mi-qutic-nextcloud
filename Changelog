@@ -1,5 +1,10 @@
 # Changelog
 
+## 17.3.3
+
+* move htdocs to /var/www
+* add server_alias option
+
 ## 17.3.2
 
 * add php71-apcu package

@@ -6,6 +6,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 set -o errexit
 
 NEXTCLOUD_VERSION="11.0.6"
+DESTDIR="/var/www/htdocs/nextcloud"
 
 MUNIN_PLUGINS="
 	apache_accesses
@@ -31,9 +32,9 @@ for CONF_RM in ${HTTPD_CONF_RM}; do
 done
 
 echo "* Setup nextcloud"
-mkdir -p /opt/local/share/httpd/nextcloud/releases
+mkdir -p $DESTDIR/releases
 
-cd /opt/local/share/httpd/nextcloud/releases
+cd $DESTDIR/releases
 curl -L -O https://download.qutic.com/src/nextcloud/nextcloud-$NEXTCLOUD_VERSION.tar.bz2
 tar xf nextcloud-$NEXTCLOUD_VERSION.tar.bz2
 rm nextcloud-$NEXTCLOUD_VERSION.tar.bz2
@@ -63,13 +64,13 @@ rm deck.tar.gz
 rm news.tar.gz
 rm polls.tar.gz
 
-cd /opt/local/share/httpd/nextcloud/
-ln -nfs /opt/local/share/httpd/nextcloud/releases/nc-$NEXTCLOUD_VERSION current
+cd $DESTDIR
+ln -nfs $DESTDIR/releases/nc-$NEXTCLOUD_VERSION current
 
-chown -R www:www /opt/local/share/httpd/nextcloud
+chown -R www:www "$DESTDIR"
 
 echo "* Change www for cronjobs"
-usermod -d /opt/local/share/httpd/nextcloud -s /usr/bin/bash www
+usermod -d "$DESTDIR" -s /usr/bin/bash www
 
 echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}

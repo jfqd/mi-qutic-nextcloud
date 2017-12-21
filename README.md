@@ -67,7 +67,8 @@ vmadm create << EOF
     "mail_adminaddr":        "report@example.com",
     "munin_master_allow":    "munin-master-ip",
     "vfstab":                "storage.example.com:/export/data    -       /data    nfs     -       yes     rw,bg,intr",
-    "server_name":           "www.example.com",
+    "server_name":           "nextcloud.example.com",
+    "server_alias":          "nc.example.com",
     "data_path":             "/data/shared/data",
     "config_copy_path":      "/data/shared/config" 
   }

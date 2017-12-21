@@ -23,6 +23,7 @@
     "munin_master_allow":    {"type": "text", "description": "ip addresses (alternative hostname) of the munin master node"},
     "vfstab":                {"type": "text", "description": "nfs mountpoint for vfstab-file"},
     "server_name":           {"type": "text", "description": "nextcloud server-name"},
+    "server_alias":          {"type": "text", "description": "alias-name(s)"},
     "data_path":             {"type": "text", "description": "path of the nextcloud data directory"},
     "config_path":           {"type": "text", "description": "path of the nextcloud config directory"}
   }
