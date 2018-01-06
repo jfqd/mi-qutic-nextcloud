@@ -79,3 +79,4 @@ EOF
 ## todo
 
 * Truncate Apache log
+* Add ssl-support

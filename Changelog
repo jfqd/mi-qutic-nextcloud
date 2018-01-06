@@ -1,5 +1,9 @@
 # Changelog
 
+## 17.4.0
+
+* use pkgsrc 2017Q4
+
 ## 17.3.3
 
 * move htdocs to /var/www
