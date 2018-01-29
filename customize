@@ -5,13 +5,16 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any commands fail
 set -o errexit
 
-NEXTCLOUD_VERSION="11.0.6"
+NEXTCLOUD_VERSION="11.0.7"
 DESTDIR="/var/www/htdocs/nextcloud"
 
 MUNIN_PLUGINS="
 	apache_accesses
 	apache_processes
 	apache_volume
+	redis_connected_clients
+	redis_per_sec and
+	redis_used_memory
 "
 
 echo "* Remove unused httpd config files"
@@ -43,12 +46,12 @@ cd nc-$NEXTCLOUD_VERSION
 rm -rf config
 
 cd apps
-curl -L -O https://download.qutic.com/src/nextcloud/calendar.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/contacts.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/tasks.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/deck.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/news.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/polls.tar.gz
+curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/calendar.tar.gz
+curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/contacts.tar.gz
+curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/tasks.tar.gz
+curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/deck.tar.gz
+curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/news.tar.gz
+curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/polls.tar.gz
 
 tar xf calendar.tar.gz
 tar xf contacts.tar.gz
@@ -74,6 +77,15 @@ usermod -d "$DESTDIR" -s /usr/bin/bash www
 
 echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
+
+echo "* Activate redis"
+gsed -i \
+     -e "s/# maxmemory <bytes>/maxmemory 256mb/" \
+     -e "s/# maxmemory-policy noeviction/# maxmemory-policy allkeys-lfu/" \
+     -e "s/# unixsocket \/tmp\/redis.sock/unixsocket \/var\/tmp\/redis.sock/" \
+     /opt/local/etc/redis.conf
+
+svcadm enable redis
 
 # echo "* Enable ipfilter"
 # svcadm enable svc:/network/ipfilter:default
