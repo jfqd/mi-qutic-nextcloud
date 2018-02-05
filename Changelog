@@ -1,5 +1,9 @@
 # Changelog
 
+## 17.4.2
+
+* build on latest qutic image
+
 ## 17.4.1
 
 * include local redis
