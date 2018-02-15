@@ -13,7 +13,7 @@ MUNIN_PLUGINS="
 	apache_processes
 	apache_volume
 	redis_connected_clients
-	redis_per_sec and
+	redis_per_sec
 	redis_used_memory
 "
 
