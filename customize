@@ -12,6 +12,7 @@ MUNIN_PLUGINS="
 	apache_accesses
 	apache_processes
 	apache_volume
+	httpd_memory
 	redis_connected_clients
 	redis_per_sec
 	redis_used_memory
