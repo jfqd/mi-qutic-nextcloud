@@ -21,6 +21,7 @@
     "ssh_host_dsa_key":      {"type": "text", "description": "private SSH dsa key for the host daemon"},
     "ssh_host_dsa_key.pub":  {"type": "text", "description": "public SSH dsa key for the host daemon"},
     "munin_master_allow":    {"type": "text", "description": "ip addresses (alternative hostname) of the munin master node"},
+    "nagios_allow":          {"type": "text", "description": "ip addresses of the nagios server node, seperated by comma"},
     "vfstab":                {"type": "text", "description": "nfs mountpoint for vfstab-file"},
     "server_name":           {"type": "text", "description": "nextcloud server-name"},
     "server_alias":          {"type": "text", "description": "alias-name(s)"},
