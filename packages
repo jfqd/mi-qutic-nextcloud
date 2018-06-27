@@ -30,9 +30,11 @@ php71-apcu
 php71-pcntl
 php71-redis3
 # sql
-percona-client-5.6.36
+percona-client
 # web
 ap24-php71
-ap24-usdt
+# ap24-usdt
 # memcache
 redis
+# munin
+ruby24

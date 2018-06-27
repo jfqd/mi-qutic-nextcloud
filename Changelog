@@ -1,5 +1,18 @@
 # Changelog
 
+## 18.1.0
+
+* use pkgsrc 2018Q1
+* update to nc 12.0.9
+
+## 17.4.3
+
+* add missing nrpe_local.cfg
+* include missing nagios_allow
+* increase queue_timeout
+* add nextcloud.log to beaver
+* use opcache
+
 ## 17.4.2
 
 * build on latest qutic image
