@@ -57,7 +57,6 @@ curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/flow
 curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/bookmarks-0.11.0.tar.gz
 curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/files_pdfviewer-1.1.2.tar.gz
 curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/mail.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/files_pdfviewer-1.1.2.tar.gz
 
 tar xf calendar.tar.gz
 tar xf contacts.tar.gz
@@ -69,7 +68,6 @@ tar xf flowupload.tar.gz
 tar xf bookmarks-0.11.0.tar.gz
 tar xf files_pdfviewer-1.1.2.tar.gz
 tar xf mail.tar.gz
-tar xf files_pdfviewer-1.1.2.tar.gz
 
 rm calendar.tar.gz
 rm contacts.tar.gz
@@ -81,8 +79,6 @@ rm flowupload.tar.gz
 rm bookmarks-0.11.0.tar.gz
 rm files_pdfviewer-1.1.2.tar.gz
 rm mail.tar.gz
-rm files_pdfviewer-1.1.2.tar.gz
-
 
 cd $DESTDIR
 ln -nfs $DESTDIR/releases/nc-$NEXTCLOUD_VERSION current
