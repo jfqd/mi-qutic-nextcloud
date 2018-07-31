@@ -1,11 +1,11 @@
 {
   "name":         "qutic-nextcloud",
-  "version":      "18.1.0",
-  "description":  "qutic nextcloud 12.0.9 image",
+  "version":      "18.2.0",
+  "description":  "qutic nextcloud 12.0.10 image",
   "organization": "qutic development",
   "brand":        "nextcloud instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-nextcloud",
-  "base":         "26cf8c16-2b8e-11e8-8d7f-3fff13b53d67",
+  "base":         "5d541d8e-948d-11e8-af19-ff9be7f5cc6f",
   "customer_metadata": {
     "admin_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the admin user"},
     "root_authorized_keys":  {"type": "text", "description": "SSH public authorized key(s) for the root user"},
@@ -22,6 +22,7 @@
     "ssh_host_dsa_key.pub":  {"type": "text", "description": "public SSH dsa key for the host daemon"},
     "munin_master_allow":    {"type": "text", "description": "ip addresses (alternative hostname) of the munin master node"},
     "nagios_allow":          {"type": "text", "description": "ip addresses of the nagios server node, seperated by comma"},
+    "logstash_redis":        {"type": "text", "description": "ip addresses of the logstash redis nodes, seperated by comma and including redis-protocoll"},
     "vfstab":                {"type": "text", "description": "nfs mountpoint for vfstab-file"},
     "server_name":           {"type": "text", "description": "nextcloud server-name"},
     "server_alias":          {"type": "text", "description": "alias-name(s)"},
