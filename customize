@@ -5,7 +5,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any commands fail
 set -o errexit
 
-NEXTCLOUD_VERSION="12.0.10"
+NEXTCLOUD_VERSION="13.0.6"
 DESTDIR="/var/www/htdocs/nextcloud"
 
 MUNIN_PLUGINS="
@@ -54,9 +54,10 @@ curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/deck
 curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/news.tar.gz
 curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/polls.tar.gz
 curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/flowupload.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/bookmarks-0.11.0.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/files_pdfviewer-1.1.2.tar.gz
+curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/bookmarks-0.12.2.tar.gz
+curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/files_pdfviewer-1.2.1.tar.gz
 curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/mail.tar.gz
+curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/spreed-3.2.6.tar.gz
 
 tar xf calendar.tar.gz
 tar xf contacts.tar.gz
@@ -65,9 +66,10 @@ tar xf deck.tar.gz
 tar xf news.tar.gz
 tar xf polls.tar.gz
 tar xf flowupload.tar.gz
-tar xf bookmarks-0.11.0.tar.gz
-tar xf files_pdfviewer-1.1.2.tar.gz
+tar xf bookmarks-0.12.2.tar.gz
+tar xf files_pdfviewer-1.2.1.tar.gz
 tar xf mail.tar.gz
+tar xf spreed-3.2.6.tar.gz
 
 rm calendar.tar.gz
 rm contacts.tar.gz
@@ -76,9 +78,10 @@ rm deck.tar.gz
 rm news.tar.gz
 rm polls.tar.gz
 rm flowupload.tar.gz
-rm bookmarks-0.11.0.tar.gz
-rm files_pdfviewer-1.1.2.tar.gz
+rm bookmarks-0.12.2.tar.gz
+rm files_pdfviewer-1.2.1.tar.gz
 rm mail.tar.gz
+rm spreed-3.2.6.tar.gz
 
 cd $DESTDIR
 ln -nfs $DESTDIR/releases/nc-$NEXTCLOUD_VERSION current
