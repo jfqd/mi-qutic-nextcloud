@@ -33,8 +33,8 @@ php71-redis3
 percona-client
 # web
 ap24-php71
-# ap24-usdt
+ap24-usdt
 # memcache
 redis
 # munin
-ruby24
+ruby25

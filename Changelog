@@ -1,5 +1,10 @@
 # Changelog
 
+## 18.3.0
+
+* use pkgsrc 2018Q3
+* update to nextcloud 14.0.3
+
 ## 18.2.1
 
 * update to nextcloud 13.0.6
