@@ -5,16 +5,18 @@ if [[ -z "${NEXTCLOUD_VERSION}" ]]; then
   exit 1
 fi
 
+# download and install nextcloud
 mkdir -p "${DESTDIR}/releases"
 cd "${DESTDIR}/releases"
-curl -L -O https://download.qutic.com/src/nextcloud/nextcloud-$NEXTCLOUD_VERSION.tar.bz2
-tar xf nextcloud-$NEXTCLOUD_VERSION.tar.bz2
-rm nextcloud-$NEXTCLOUD_VERSION.tar.bz2
-mv nextcloud nc-$NEXTCLOUD_VERSION
-cd nc-$NEXTCLOUD_VERSION
-rm -rf config
-
-cd apps
+if [[ ! -f "nextcloud-$NEXTCLOUD_VERSION.tar.bz2" ]]; then
+  curl -L -O https://download.qutic.com/src/nextcloud/nextcloud-$NEXTCLOUD_VERSION.tar.bz2
+  tar xf nextcloud-$NEXTCLOUD_VERSION.tar.bz2
+  rm nextcloud-$NEXTCLOUD_VERSION.tar.bz2
+  mv nextcloud nc-$NEXTCLOUD_VERSION
+  rm -rf nc-$NEXTCLOUD_VERSION/config
+fi
+# download and install nextcloud-apps
+cd nc-${NEXTCLOUD_VERSION}/apps
 for nc_app in ${NEXTCLOUD_APPS[@]}; do
   curl -L -O "https://download.qutic.com/src/nextcloud/apps-${NEXTCLOUD_VERSION}/${nc_app}"
   if [[ -f "${nc_app}" ]]; then
