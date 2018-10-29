@@ -36,49 +36,21 @@ for CONF_RM in ${HTTPD_CONF_RM}; do
 done
 
 echo "* Setup nextcloud"
-mkdir -p $DESTDIR/releases
-
-cd $DESTDIR/releases
-curl -L -O https://download.qutic.com/src/nextcloud/nextcloud-$NEXTCLOUD_VERSION.tar.bz2
-tar xf nextcloud-$NEXTCLOUD_VERSION.tar.bz2
-rm nextcloud-$NEXTCLOUD_VERSION.tar.bz2
-mv nextcloud nc-$NEXTCLOUD_VERSION
-cd nc-$NEXTCLOUD_VERSION
-rm -rf config
-
-cd apps
-curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/calendar.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/contacts.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/tasks.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/deck.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/news.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/polls.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/flowupload.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/bookmarks-0.13.1.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/mail.tar.gz
-curl -L -O https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/spreed-4.0.0.tar.gz
-
-tar xf calendar.tar.gz
-tar xf contacts.tar.gz
-tar xf tasks.tar.gz
-tar xf deck.tar.gz
-tar xf news.tar.gz
-tar xf polls.tar.gz
-tar xf flowupload.tar.gz
-tar xf bookmarks-0.13.1.tar.gz
-tar xf mail.tar.gz
-tar xf spreed-4.0.0.tar.gz
-
-rm calendar.tar.gz
-rm contacts.tar.gz
-rm tasks.tar.gz
-rm deck.tar.gz
-rm news.tar.gz
-rm polls.tar.gz
-rm flowupload.tar.gz
-rm bookmarks-0.13.1.tar.gz
-rm mail.tar.gz
-rm spreed-4.0.0.tar.gz
+NEXTCLOUD_APPS="
+	calendar.tar.gz
+	contacts.tar.gz
+	tasks.tar.gz
+	deck.tar.gz
+	news.tar.gz
+	polls.tar.gz
+	flowupload.tar.gz
+	bookmarks-0.13.1.tar.gz
+	mail.tar.gz
+	spreed-4.0.0.tar.gz
+	files_markdown.tar.gz
+	apporder.tar.gz
+"
+/opt/qutic/bin/setup-nextcloud
 
 cd $DESTDIR
 ln -nfs $DESTDIR/releases/nc-$NEXTCLOUD_VERSION current

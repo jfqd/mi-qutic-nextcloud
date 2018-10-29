@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+NEXTCLOUD_APPS=${NEXTCLOUD_APPS-$@}
+
+if [[ -z "${NEXTCLOUD_VERSION}" ]]; then
+  exit 1
+fi
+
+mkdir -p "${DESTDIR}/releases"
+cd "${DESTDIR}/releases"
+curl -L -O https://download.qutic.com/src/nextcloud/nextcloud-$NEXTCLOUD_VERSION.tar.bz2
+tar xf nextcloud-$NEXTCLOUD_VERSION.tar.bz2
+rm nextcloud-$NEXTCLOUD_VERSION.tar.bz2
+mv nextcloud nc-$NEXTCLOUD_VERSION
+cd nc-$NEXTCLOUD_VERSION
+rm -rf config
+
+cd apps
+for nc_app in ${NEXTCLOUD_APPS[@]}; do
+  curl -L -O "https://download.qutic.com/src/nextcloud/apps-${NEXTCLOUD_VERSION}/${nc_app}"
+  if [[ -f "${nc_app}" ]]; then
+    tar xf "${nc_app}"
+    rm "${nc_app}"
+  fi
+done
