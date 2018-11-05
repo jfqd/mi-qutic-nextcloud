@@ -1,5 +1,10 @@
 # Changelog
 
+## 18.3.1
+
+* nextcloud installation refactoring
+* add more nextcloud apps
+
 ## 18.3.0
 
 * use pkgsrc 2018Q3
