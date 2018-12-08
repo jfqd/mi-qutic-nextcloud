@@ -35,7 +35,16 @@ for CONF_RM in ${HTTPD_CONF_RM}; do
   rm -f /opt/local/etc/httpd/${CONF_RM}
 done
 
-echo "* Setup nextcloud"
+echo "* Install nextcloud"
+mkdir -p "${DESTDIR}/releases"
+cd "${DESTDIR}/releases"
+curl -L -O https://download.qutic.com/src/nextcloud/nextcloud-$NEXTCLOUD_VERSION.tar.bz2
+tar xf nextcloud-$NEXTCLOUD_VERSION.tar.bz2
+rm nextcloud-$NEXTCLOUD_VERSION.tar.bz2
+mv nextcloud nc-$NEXTCLOUD_VERSION
+rm -rf nc-$NEXTCLOUD_VERSION/config
+
+echo "* Setup nextcloud-apps"
 NEXTCLOUD_APPS="
 	calendar.tar.gz
 	contacts.tar.gz
@@ -54,8 +63,17 @@ NEXTCLOUD_APPS="
 	caniupdate-0.2.0.tar.gz
 	phonetrack-0.3.9.tar.gz
 "
-/opt/qutic/bin/setup-nextcloud
 
+cd nc-${NEXTCLOUD_VERSION}/apps
+for nc_app in ${NEXTCLOUD_APPS[@]}; do
+  curl -L -O "https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/${nc_app}"
+  if [[ -f "${nc_app}" ]]; then
+    tar xf "${nc_app}"
+    rm "${nc_app}"
+  fi
+done
+
+echo "* Setup nextcloud"
 cd $DESTDIR
 ln -nfs $DESTDIR/releases/nc-$NEXTCLOUD_VERSION current
 
