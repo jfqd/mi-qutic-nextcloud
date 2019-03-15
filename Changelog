@@ -1,5 +1,11 @@
 # Changelog
 
+## 20181018.2
+
+* use php 7.3
+* add tls to apache
+* use proxysql with spiped backends
+
 ## 20181018.1
 
 * move to pkgsrc trunk

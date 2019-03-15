@@ -88,14 +88,19 @@ usermod -d "$DESTDIR" -s /usr/bin/bash www
 echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
-echo "* Activate redis"
-gsed -i \
-     -e "s/# maxmemory <bytes>/maxmemory 256mb/" \
-     -e "s/# maxmemory-policy noeviction/# maxmemory-policy allkeys-lfu/" \
-     -e "s/# unixsocket \/tmp\/redis.sock/unixsocket \/var\/tmp\/redis.sock/" \
-     /opt/local/etc/redis.conf
-
-svcadm enable redis
+echo "* Setup proxysql";
+pkg_add https://download.qutic.com/extras/proxysql-1.4.7.tgz || true
+mkdir -p /opt/local/var/proxysql
+groupadd -g 130 proxysql
+useradd -m -s /usr/bin/false -d /opt/local/var/proxysql -u 130 -g proxysql proxysql
+chown proxysql:proxysql /opt/local/var/proxysql/
+mv /opt/local/etc/proxysql.cnf /opt/local/etc/proxysql.cnf.bak || true
+mv /opt/local/var/tmp/proxysql.cnf /opt/local/etc/proxysql.cnf
+chmod 0640 /opt/local/etc/proxysql.cnf
+chown root:proxysql /opt/local/etc/proxysql.cnf
+mv /opt/local/var/tmp/proxysql.xml /opt/local/lib/svc/manifest/proxysql.xml
+svccfg import /opt/local/lib/svc/manifest/proxysql.xml
+ln -nfs /var/svc/log/pkgsrc-proxysql:default.log /var/log/proxysql_log
 
 # echo "* Enable ipfilter"
 # svcadm enable svc:/network/ipfilter:default
