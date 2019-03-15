@@ -9,4 +9,4 @@ SSL_HOME='/opt/local/etc/httpd/ssl/'
 mkdir -p "${SSL_HOME}"
 
 # Self-signed certificate generator
-/opt/qutic/bin/ssl-selfsigned.sh -d ${SSL_HOME} nextcloud
+/opt/qutic/bin/ssl-selfsigned.sh -d ${SSL_HOME} -f nextcloud

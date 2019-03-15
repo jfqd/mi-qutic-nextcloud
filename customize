@@ -79,7 +79,6 @@ done
 echo "* Setup nextcloud"
 cd $DESTDIR
 ln -nfs $DESTDIR/releases/nc-$NEXTCLOUD_VERSION current
-
 chown -R www:www "$DESTDIR"
 
 echo "* Change www for cronjobs"
@@ -87,6 +86,21 @@ usermod -d "$DESTDIR" -s /usr/bin/bash www
 
 echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
+
+# Configuring image specific packages
+echo "* Configuring image specific packages.";
+mkdir -p /var/log/httpd/old
+mkdir -p /opt/local/etc/httpd/ssl || true
+chmod 0640 /opt/local/etc/httpd/ssl
+ln -nfs /opt/local/etc/httpd/ssl /opt/local/etc/httpd/tls
+
+echo "* Setup spiped"
+groupadd -g 120 spiped
+useradd -m -s /usr/bin/false -d /nonexistent -u 120 -g spiped spiped
+dd if=/dev/urandom bs=32 count=1 2>/dev/null | shasum -a 512 | awk '{print $1}' | tr -d '\n' > /etc/ssh/spiped.key
+chmod 0640 /etc/ssh/spiped.key
+chown root:spiped /etc/ssh/spiped.key
+svccfg delete svc:/pkgsrc/spiped:default
 
 echo "* Setup proxysql";
 pkg_add https://download.qutic.com/extras/proxysql-1.4.7.tgz || true
