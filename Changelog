@@ -1,5 +1,10 @@
 # Changelog
 
+## 20181018.3
+
+* update to nextcloud 15.0.8
+* use latest qutic base image
+
 ## 20181018.2
 
 * use php 7.3
