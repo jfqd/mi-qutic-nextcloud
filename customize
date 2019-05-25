@@ -38,7 +38,7 @@ done
 echo "* Install nextcloud"
 mkdir -p "${DESTDIR}/releases"
 cd "${DESTDIR}/releases"
-curl -L -O https://download.qutic.com/src/nextcloud/nextcloud-$NEXTCLOUD_VERSION.tar.bz2
+curl -s -L -O https://download.qutic.com/src/nextcloud/nextcloud-$NEXTCLOUD_VERSION.tar.bz2
 tar xf nextcloud-$NEXTCLOUD_VERSION.tar.bz2
 rm nextcloud-$NEXTCLOUD_VERSION.tar.bz2
 mv nextcloud nc-$NEXTCLOUD_VERSION
@@ -69,8 +69,9 @@ NEXTCLOUD_APPS="
 
 cd nc-${NEXTCLOUD_VERSION}/apps
 for nc_app in ${NEXTCLOUD_APPS[@]}; do
-  curl -L -O "https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/${nc_app}"
+  curl -s -L -O "https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/${nc_app}"
   if [[ -f "${nc_app}" ]]; then
+    echo "** Installing app: ${nc_app}"
     tar xf "${nc_app}"
     rm "${nc_app}"
   fi
