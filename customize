@@ -47,23 +47,23 @@ rm -rf nc-$NEXTCLOUD_VERSION/config
 echo "* Setup nextcloud-apps"
 NEXTCLOUD_APPS="
 	apporder.tar.gz
-	bookmarks-0.16.2.tar.gz
+	bookmarks-1.0.5.tar.gz
 	calendar.tar.gz
 	checksum.tar.gz
 	contacts.tar.gz
 	deck.tar.gz
-	event_update_notification-0.3.2.tar.gz
+	event_update_notification-0.3.4.tar.gz
 	files_accesscontrol-1.5.0.tar.gz
 	files_markdown.tar.gz
 	flowupload.tar.gz
-	gpxpod-3.0.1.tar.gz
-	keeweb-0.5.0.tar.gz
+	gpxpod-3.0.3.tar.gz
+	keeweb-0.5.1.tar.gz
 	mail.tar.gz
 	news.tar.gz
-	phonetrack-0.4.3.tar.gz
+	phonetrack-0.5.1.tar.gz
 	polls.tar.gz
 	quota_warning-1.4.0.tar.gz
-	spreed-5.0.2.tar.gz
+	spreed-5.0.3.tar.gz
 	tasks.tar.gz
 "
 
