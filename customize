@@ -5,7 +5,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any commands fail
 set -o errexit
 
-NEXTCLOUD_VERSION="15.0.8"
+NEXTCLOUD_VERSION="15.0.11"
 DESTDIR="/var/www/htdocs/nextcloud"
 
 MUNIN_PLUGINS="
@@ -47,7 +47,7 @@ rm -rf nc-$NEXTCLOUD_VERSION/config
 echo "* Setup nextcloud-apps"
 NEXTCLOUD_APPS="
 	apporder.tar.gz
-	bookmarks-1.0.5.tar.gz
+	bookmarks-2.1.1.tar.gz
 	calendar.tar.gz
 	checksum.tar.gz
 	contacts.tar.gz
@@ -55,15 +55,15 @@ NEXTCLOUD_APPS="
 	event_update_notification-0.3.4.tar.gz
 	files_accesscontrol-1.5.0.tar.gz
 	files_markdown.tar.gz
-	flowupload.tar.gz
-	gpxpod-3.0.3.tar.gz
+	flowupload-0.1.2.tar.gz
+	gpxpod-4.0.5.tar.gz
 	keeweb-0.5.1.tar.gz
 	mail.tar.gz
 	news.tar.gz
-	phonetrack-0.5.1.tar.gz
+	phonetrack-0.5.2.tar.gz
 	polls.tar.gz
 	quota_warning-1.4.0.tar.gz
-	spreed-5.0.3.tar.gz
+	spreed-5.0.4.tar.gz
 	tasks.tar.gz
 "
 
