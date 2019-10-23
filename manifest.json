@@ -1,7 +1,7 @@
 {
   "name":         "qutic-nextcloud",
   "version":      "20181018.5",
-  "description":  "qutic nextcloud 16.0.4 image",
+  "description":  "qutic nextcloud 16.0.5 image",
   "organization": "qutic development",
   "brand":        "nextcloud instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-nextcloud",
@@ -31,11 +31,12 @@
     "proxysql_admin_pwd":           {"type": "text", "description": "proxysql admin password"},
     "proxysql_monitor_pwd":         {"type": "text", "description": "proxysql monitor password"},
     "proxysql_database_user":       {"type": "text", "description": "proxysql database user"},
-    "proxysql_database_pwd":        {"type": "text", "description": "proxysql monitor password"},
+    "proxysql_database_pwd":        {"type": "text", "description": "proxysql database password"},
     "spiped_key":                   {"type": "text", "description": "key for spiped"},
     "spiped_redis_host":            {"type": "text", "description": "redis host for spiped"},
     "spiped_redis_fallback_host":   {"type": "text", "description": "redis fallback host for spiped"},
-    "spiped_percona_host":          {"type": "text", "description": "percona host for spiped"},
-    "spiped_percona_fallback_host": {"type": "text", "description": "percona fallback host for spiped"}
+    "percona_host":                 {"type": "text", "description": "percona host for spiped"},
+    "percona_fallback_host":        {"type": "text", "description": "percona fallback host for spiped"},
+    "cronjob_all_files":            {"type": "text", "description": "cronjob for scanning all files. Set to false to skip"},
   }
 }
