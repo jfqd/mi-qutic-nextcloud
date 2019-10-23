@@ -1,5 +1,10 @@
 # Changelog
 
+## 20181018.6
+
+* update to nextcloud 16.0.5
+* add support for cronjob occ scan
+
 ## 20181018.5
 
 * update to nextcloud 16.0.4
