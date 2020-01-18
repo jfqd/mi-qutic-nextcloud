@@ -80,7 +80,7 @@ for nc_app in ${NEXTCLOUD_APPS[@]}; do
   curl -s -L -O "https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/${nc_app}"
   if [[ -f "${nc_app}" ]]; then
     echo "** Installing app: ${nc_app}"
-    tar xf "${nc_app}"
+    gtar xf "${nc_app}"
     rm "${nc_app}"
   fi
 done
