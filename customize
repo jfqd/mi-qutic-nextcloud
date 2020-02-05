@@ -5,7 +5,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any command fail
 set -o errexit
 
-NEXTCLOUD_VERSION="17.0.3"
+NEXTCLOUD_VERSION="18.0.0"
 DESTDIR="/var/www/htdocs/nextcloud"
 
 MUNIN_PLUGINS="
@@ -49,20 +49,21 @@ NEXTCLOUD_APPS="
 	apporder.tar.gz
 	bookmarks-2.3.4.tar.gz
 	calendar.tar.gz
+	camerarawpreviews_nextcloud.tar.gz
 	checksum.tar.gz
 	contacts.tar.gz
 	deck.tar.gz
 	dicomviewer.tar.gz
 	emlviewer.tar.gz
 	event_update_notification-1.0.1.tar.gz
-	files_accesscontrol-1.7.0.tar.gz
-	files_automatedtagging-1.7.0.tar.gz
+	files_accesscontrol-1.8.1.tar.gz
+	files_automatedtagging-1.8.1.tar.gz
 	files_ebookreader-0.0.1.tar.gz
 	files_markdown.tar.gz
 	files_mindmap-0.0.17.tar.gz
 	forms.tar.gz
 	gpxpod-4.1.1.tar.gz
-	groupfolders.tar.gz
+	groupfolders-6.0.1.tar.gz
 	groupquota-0.1.2.tar.gz
 	keeweb-0.6.1.tar.gz
 	mail.tar.gz
@@ -71,8 +72,8 @@ NEXTCLOUD_APPS="
 	notes.tar.gz
 	phonetrack-0.6.1.tar.gz
 	polls.tar.gz
-	quota_warning-1.6.0.tar.gz
-	spreed-7.0.2.tar.gz
+	quota_warning-1.7.0.tar.gz
+	spreed-8.0.1.tar.gz
 	tasks.tar.gz
 	telephoneprovider.tar.gz
 	text.tar.gz
