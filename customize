@@ -76,7 +76,6 @@ NEXTCLOUD_APPS="
 	spreed-8.0.1.tar.gz
 	tasks.tar.gz
 	telephoneprovider.tar.gz
-	text.tar.gz
 "
 
 cd nc-${NEXTCLOUD_VERSION}/apps
