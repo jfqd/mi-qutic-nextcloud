@@ -1,5 +1,9 @@
 # Changelog
 
+## 20191127.1
+
+* update to nextcloud 17.0.3
+
 ## 20191127.0
 
 * use lastest base image
