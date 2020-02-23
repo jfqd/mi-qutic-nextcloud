@@ -70,6 +70,7 @@ NEXTCLOUD_APPS="
 	maps-0.1.4.tar.gz
 	news.tar.gz
 	notes.tar.gz
+	ocr.tar.gz
 	phonetrack-0.6.1.tar.gz
 	polls.tar.gz
 	quota_warning-1.7.0.tar.gz
