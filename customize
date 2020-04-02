@@ -46,7 +46,6 @@ rm -rf nc-$NEXTCLOUD_VERSION/config
 
 echo "* Setup nextcloud-apps"
 NEXTCLOUD_APPS="
-	admin_notifications-1.0.2.tar.gz
 	analytics-2.1.1.tar.gz
 	apporder.tar.gz
 	bookmarks-2.3.4.tar.gz
