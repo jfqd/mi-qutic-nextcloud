@@ -46,7 +46,6 @@ rm -rf nc-$NEXTCLOUD_VERSION/config
 
 echo "* Setup nextcloud-apps"
 NEXTCLOUD_APPS="
-	analytics-2.1.1.tar.gz
 	apporder.tar.gz
 	bookmarks-2.3.4.tar.gz
 	calendar.tar.gz
