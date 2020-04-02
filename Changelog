@@ -1,5 +1,10 @@
 # Changelog
 
+## 20191127.4
+
+* update to nextcloud 18.0.3
+* add zabbix-config
+
 ## 20191127.3
 
 * update to nextcloud 18.0.1
