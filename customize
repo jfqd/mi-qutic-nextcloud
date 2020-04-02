@@ -51,7 +51,6 @@ NEXTCLOUD_APPS="
 	calendar.tar.gz
 	camerarawpreviews_nextcloud.tar.gz
 	checksum.tar.gz
-	cms_pico-v1.0.5.tar.gz
 	contacts.tar.gz
 	cospend-0.4.4.tar.gz
 	dashboardcharts.0.1.3.tar.gz
