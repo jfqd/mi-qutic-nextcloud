@@ -1,5 +1,10 @@
 # Changelog
 
+## 20191127.7
+
+* update to nextcloud 18.0.7
+* optimize apache server settings
+
 ## 20191127.6
 
 * update to nextcloud 18.0.5
