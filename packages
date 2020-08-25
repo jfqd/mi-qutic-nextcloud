@@ -31,7 +31,7 @@ php73-pcntl
 php73-redis3
 php73-imagick
 php73-xsl
-# php73-gmp
+php73-gmp
 # sql
 percona-client
 # web
