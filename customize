@@ -80,6 +80,7 @@ NEXTCLOUD_APPS="
 	phonetrack-0.6.4.tar.gz
 	polls.tar.gz
 	quota_warning-1.8.0.tar.gz
+	richdocuments.tar.gz
 	spreed-9.0.3.tar.gz
 	tasks.tar.gz
 	telephoneprovider.tar.gz
