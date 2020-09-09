@@ -5,7 +5,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any command fail
 set -o errexit
 
-NEXTCLOUD_VERSION="19.0.1"
+NEXTCLOUD_VERSION="19.0.2"
 DESTDIR="/var/www/htdocs/nextcloud"
 
 MUNIN_PLUGINS="
