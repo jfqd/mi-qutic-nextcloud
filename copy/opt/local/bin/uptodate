@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+# upgrade system
+/opt/local/bin/pkgin up
+/opt/local/bin/pkgin -y ug
+/opt/local/bin/pkgin clean
+# fix common issues
+/opt/local/bin/sed -i "s#/var/log/httpd/access-.*##" /etc/logadm.conf
+/usr/sbin/svcadm restart nullmailer
+/usr/bin/chown redis:redis /opt/local/etc/redis.conf
+/usr/sbin/svcadm clear redis
+/usr/bin/cp /opt/local/lib/munin/plugins/ps_.bak /opt/local/lib/munin/plugins/ps_
+sudo -u www php /var/www/htdocs/nextcloud/current/occ upgrade
+/usr/bin/svcs -vx
