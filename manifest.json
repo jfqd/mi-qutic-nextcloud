@@ -1,11 +1,11 @@
 {
   "name":         "qutic-nextcloud",
-  "version":      "20191127.9",
-  "description":  "qutic nextcloud 19.0.2 image",
+  "version":      "20191127.10",
+  "description":  "qutic nextcloud 19.0.4 image",
   "organization": "qutic development",
   "brand":        "nextcloud instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-nextcloud",
-  "base":         "a663a98e-f2c5-11ea-9f9a-236f517a8c1d",
+  "base":         "bbbdcfc0-200c-11eb-bf50-1bc722d57c54",
   "customer_metadata": {
     "admin_authorized_keys":        {"type": "text", "description": "SSH public authorized key(s) for the admin user"},
     "root_authorized_keys":         {"type": "text", "description": "SSH public authorized key(s) for the root user"},

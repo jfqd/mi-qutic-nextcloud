@@ -1,5 +1,10 @@
 # Changelog
 
+## 20191127.10
+
+* update to nextcloud 19.0.4
+* use latest base image 20191127.5
+
 ## 20191127.9
 
 * update to nextcloud 19.0.2
