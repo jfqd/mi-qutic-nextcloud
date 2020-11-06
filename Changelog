@@ -4,6 +4,7 @@
 
 * update to nextcloud 19.0.4
 * add uptodate script
+* use latest app versions
 * use latest base image 20191127.5
 
 ## 20191127.9
