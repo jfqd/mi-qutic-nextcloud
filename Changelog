@@ -1,5 +1,11 @@
 # Changelog
 
+## 20191127.11
+
+* update to nextcloud 19.0.6
+* use tmp folder on nfs storage
+* remove maintenance mode after update
+
 ## 20191127.10
 
 * update to nextcloud 19.0.4
