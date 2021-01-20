@@ -39,6 +39,8 @@ percona-client
 apache
 ap24-php73
 ap24-usdt
+# ap24-xsendfile
+ap24-modsecurity
 # memcache
 redis
 spiped
