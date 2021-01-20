@@ -1,0 +1,10 @@
+MaxRequestsPerChild 1500
+
+<IfModule mod_env.c>
+  SetEnv TMPDIR /data/tmp
+</IfModule>
+
+Timeout 3600
+
+# Use http/2 if possible
+Protocols h2 http/1.1

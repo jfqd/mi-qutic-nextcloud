@@ -1,6 +1,7 @@
 # List packages to add to your image one per line.
 #
 # php
+php73-fpm
 php73-pdo
 php73-pdo_mysql
 php73-pdo_sqlite
@@ -35,6 +36,7 @@ php73-gmp
 # sql
 percona-client
 # web
+apache
 ap24-php73
 ap24-usdt
 # memcache

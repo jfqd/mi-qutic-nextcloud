@@ -63,12 +63,12 @@ LoadModule headers_module lib/httpd/mod_headers.so
 #LoadModule unique_id_module lib/httpd/mod_unique_id.so
 LoadModule setenvif_module lib/httpd/mod_setenvif.so
 #LoadModule version_module lib/httpd/mod_version.so
-#LoadModule remoteip_module lib/httpd/mod_remoteip.so
-#LoadModule proxy_module lib/httpd/mod_proxy.so
+LoadModule remoteip_module lib/httpd/mod_remoteip.so
+LoadModule proxy_module lib/httpd/mod_proxy.so
 #LoadModule proxy_connect_module lib/httpd/mod_proxy_connect.so
 #LoadModule proxy_ftp_module lib/httpd/mod_proxy_ftp.so
 # LoadModule proxy_http_module lib/httpd/mod_proxy_http.so
-# LoadModule proxy_fcgi_module lib/httpd/mod_proxy_fcgi.so
+LoadModule proxy_fcgi_module lib/httpd/mod_proxy_fcgi.so
 #LoadModule proxy_scgi_module lib/httpd/mod_proxy_scgi.so
 #LoadModule proxy_fdpass_module lib/httpd/mod_proxy_fdpass.so
 #LoadModule proxy_wstunnel_module lib/httpd/mod_proxy_wstunnel.so
@@ -86,8 +86,8 @@ LoadModule ssl_module lib/httpd/mod_ssl.so
 #LoadModule lbmethod_bytraffic_module lib/httpd/mod_lbmethod_bytraffic.so
 #LoadModule lbmethod_bybusyness_module lib/httpd/mod_lbmethod_bybusyness.so
 #LoadModule lbmethod_heartbeat_module lib/httpd/mod_lbmethod_heartbeat.so
-#LoadModule mpm_event_module lib/httpd/mod_mpm_event.so
-LoadModule mpm_prefork_module lib/httpd/mod_mpm_prefork.so
+LoadModule mpm_event_module lib/httpd/mod_mpm_event.so
+#LoadModule mpm_prefork_module lib/httpd/mod_mpm_prefork.so
 LoadModule unixd_module lib/httpd/mod_unixd.so
 #LoadModule privileges_module lib/httpd/mod_privileges.so
 #LoadModule heartbeat_module lib/httpd/mod_heartbeat.so
@@ -109,5 +109,5 @@ LoadModule dir_module lib/httpd/mod_dir.so
 #LoadModule userdir_module lib/httpd/mod_userdir.so
 LoadModule alias_module lib/httpd/mod_alias.so
 LoadModule rewrite_module lib/httpd/mod_rewrite.so
-#LoadModule usdt_module lib/httpd/mod_usdt.so
-LoadModule php7_module lib/httpd/mod_php7.so
+LoadModule usdt_module lib/httpd/mod_usdt.so
+LoadModule http2_module lib/httpd/mod_http2.so
