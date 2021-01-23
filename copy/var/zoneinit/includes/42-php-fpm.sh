@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if mdata-get mpm_event 1>/dev/null 2>&1; then
-  if [[ mdata-get mpm_event = "true" ]]; then
+  if [[ `mdata-get mpm_event` = "true" ]]; then
     # Deactivate apache mpm-prefork files
     mv /opt/local/etc/httpd/conf.d/00-modules_prefork.conf /opt/local/etc/httpd/conf.d/00-modules_prefork.bak
     mv /opt/local/etc/httpd/conf.d/09-tuning_prefork.conf /opt/local/etc/httpd/conf.d/09-tuning_prefork.bak
