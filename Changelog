@@ -6,6 +6,7 @@
 * activate apache dtrace-module
 * add mod-security package
 * upgrade to php74
+* activate http2
 
 ## 20191127.12
 
