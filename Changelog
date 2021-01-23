@@ -1,5 +1,12 @@
 # Changelog
 
+## 20191127.13
+
+* add option for mpm-event usage with fpm
+* activate apache dtrace-module
+* add mod-security package
+* upgrade to php74
+
 ## 20191127.12
 
 * update to nextcloud 20.0.5
