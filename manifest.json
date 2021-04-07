@@ -29,7 +29,7 @@
     "server_alias":                 {"type": "text", "description": "alias-name(s)"},
     "data_path":                    {"type": "text", "description": "path of the nextcloud data directory"},
     "config_path":                  {"type": "text", "description": "path of the nextcloud config directory"},
-    "mpm_event":                    {"type": "text", "description": "set to true if mpm-event should be used instead of mpm-prefork"},
+    "nginx_fpm":                    {"type": "text", "description": "set to true if nginx with php-fpm should be used instead of apache mpm-prefork"},
     "proxysql_admin_pwd":           {"type": "text", "description": "proxysql admin password"},
     "proxysql_monitor_pwd":         {"type": "text", "description": "proxysql monitor password"},
     "proxysql_database_user":       {"type": "text", "description": "proxysql database user"},
