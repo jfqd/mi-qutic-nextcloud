@@ -46,5 +46,3 @@ sudo
 redis
 spiped
 ffmpeg4
-# munin
-ruby26
