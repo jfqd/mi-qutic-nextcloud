@@ -29,7 +29,7 @@ php74-opcache
 php74-imap
 php74-apcu
 php74-pcntl
-php74-redis3
+php74-redis
 php74-imagick
 php74-xsl
 php74-gmp
@@ -47,4 +47,4 @@ redis
 spiped
 ffmpeg4
 # munin
-ruby25
+ruby26

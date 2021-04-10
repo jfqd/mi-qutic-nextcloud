@@ -4,6 +4,7 @@
 
 * update to nextcloud 20.0.9
 * use nginx instead of apache mpm-event
+* use latest base image 20191127.7
 
 ## 20191127.13
 
