@@ -1,5 +1,10 @@
 # Changelog
 
+## 20191127.14
+
+* update to nextcloud 20.0.9
+* use nginx instead of apache mpm-event
+
 ## 20191127.13
 
 * add option for mpm-event usage with fpm
