@@ -5,9 +5,16 @@
 /opt/local/bin/pkgin -y ug
 /opt/local/bin/pkgin clean
 # fix common issues
-/opt/local/bin/sed -i "s#/var/log/httpd/access-.*##" /etc/logadm.conf
 /usr/sbin/svcadm restart nullmailer
-/usr/sbin/svcadm restart apache
+
+if mdata-get nginx_fpm 1>/dev/null 2>&1; then
+  /usr/sbin/svcadm restart php-fpm
+  /usr/sbin/svcadm restart nginx
+else
+  /usr/sbin/svcadm restart apache
+  /opt/local/bin/sed -i "s#/var/log/httpd/access-.*##" /etc/logadm.conf
+fi
+
 /usr/bin/chown redis:redis /opt/local/etc/redis.conf
 /usr/sbin/svcadm clear redis 2>/dev/null
 /usr/bin/cp /opt/local/lib/munin/plugins/ps_.bak /opt/local/lib/munin/plugins/ps_
