@@ -1,0 +1,27 @@
+#!/usr/bin/bash
+
+if [[ $(uname -s) = "SunOS" ]]; then
+  # Illumos / SunOS
+  # change cert
+  NAME=$(basename /opt/local/etc/httpd/ssl/*.pem .pem)
+  if [[ -n "${NAME}" ]]; then
+    (
+      cd /opt/local/etc/httpd/ssl/
+      openssl pkey -in ${NAME}.pem -out ${NAME}.key
+      openssl crl2pkcs7 -nocrl -certfile ${NAME}.pem | openssl pkcs7 -print_certs -out ${NAME}.crt
+      chmod 0600 ${NAME}.key
+      chmod 0600 ${NAME}.pem
+    )
+    if [[ $(svcs -H apache 2>/dev/null | awk '{print $1}' ) = "online" ]]; then
+      svcadm restart apache
+    fi
+    if [[ $(svcs -H nginx 2>/dev/null | awk '{print $1}' ) = "online" ]]; then
+      svcadm restart nginx
+    fi
+  else
+    echo "pem file is missing!"
+    exit 1
+  fi
+fi
+
+exit 0
