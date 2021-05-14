@@ -1,6 +1,6 @@
 {
   "name":         "qutic-nextcloud",
-  "version":      "20191127.14",
+  "version":      "20191127.15",
   "description":  "qutic nextcloud 20.0.9 image",
   "organization": "qutic development",
   "brand":        "nextcloud instance",
