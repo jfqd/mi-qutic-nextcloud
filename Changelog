@@ -1,5 +1,9 @@
 # Changelog
 
+## 20191127.16
+
+* update to nextcloud 20.0.10
+
 ## 20191127.15
 
 * allow tlsv1.3 for nginx
