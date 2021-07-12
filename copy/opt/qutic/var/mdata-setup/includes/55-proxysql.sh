@@ -37,9 +37,9 @@ fi
 if mdata-get proxysql_database_pwd 1>/dev/null 2>&1; then
   PROXY_DB_PWD=`mdata-get proxysql_database_pwd`
   sed -i "s#db-password#${PROXY_DB_PWD}#" /opt/local/etc/proxysql.cnf
-fi
 
-svcadm enable svc:/pkgsrc/proxysql:default
+  svcadm enable svc:/pkgsrc/proxysql:default
+fi
 
 cat >> /root/.mysql_history << EOF
 UPDATE mysql_servers SET status='OFFLINE_HARD' WHERE port='13306';
