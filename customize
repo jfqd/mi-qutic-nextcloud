@@ -5,7 +5,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any command fail
 set -o errexit
 
-NEXTCLOUD_VERSION="20.0.10"
+NEXTCLOUD_VERSION="21.0.4"
 DESTDIR="/var/www/htdocs/nextcloud"
 
 MUNIN_PLUGINS="
@@ -46,47 +46,47 @@ rm -rf nc-$NEXTCLOUD_VERSION/config
 
 echo "* Setup nextcloud-apps"
 NEXTCLOUD_APPS="
-	analytics-3.5.1.tar.gz
+	analytics-3.6.0.tar.gz
 	apporder.tar.gz
-	bookmarks-4.2.1.tar.gz
+	bookmarks-4.4.0.tar.gz
 	calendar.tar.gz
 	camerarawpreviews_nextcloud.tar.gz
 	checksum.tar.gz
 	cms_pico-v1.0.15.tar.gz
 	contacts.tar.gz
-	cospend-1.3.5.tar.gz
+	cospend-1.3.7.tar.gz
 	dashboardcharts.0.1.3.tar.gz
 	deck.tar.gz
 	dicomviewer.tar.gz
-	emlviewer-0.0.20.tar.gz
+	emlviewer-0.0.23.tar.gz
 	epubreader-1.4.6.tar.gz
-	event_update_notification-1.2.0.tar.gz
-	files_accesscontrol-1.10.2.tar.gz
-	files_automatedtagging-1.10.1.tar.gz
+	event_update_notification-1.3.0.tar.gz
+	files_accesscontrol-1.11.0.tar.gz
+	files_automatedtagging-1.11.0.tar.gz
 	files_fulltextsearch_tesseract-20.0.1.tar.gz
 	files_linkeditor.tar.gz
 	files_lock-20.0.0.tar.gz
 	files_markdown.tar.gz
-	files_mindmap-0.0.24.tar.gz
+	files_mindmap-0.0.25.tar.gz
 	forms.tar.gz
 	gpxpod-4.2.8.tar.gz
 	groupfolders.tar.gz
 	groupquota.tar.gz
 	keeweb-0.6.5.tar.gz
 	mail.tar.gz
-	maps-0.1.8.tar.gz
+	maps-0.1.9.tar.gz
 	news.tar.gz
 	notes.tar.gz
 	ocr.tar.gz
 	onlyoffice.tar.gz
-	phonetrack-0.6.7.tar.gz
+	phonetrack-0.6.9.tar.gz
 	polls.tar.gz
-	quota_warning-1.9.1.tar.gz
-	side_menu_v1.23.1.tar.gz
-	spreed-10.0.8.tar.gz
+	quota_warning-1.11.0.tar.gz
+	side_menu_v1.26.0.tar.gz
+	spreed-11.3.1.tar.gz
 	tasks.tar.gz
 	telephoneprovider.tar.gz
-	timetracker-0.0.56.tar.gz
+	timetracker-0.0.68.tar.gz
 	video_converter.tar.gz
 "
 
