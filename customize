@@ -117,27 +117,27 @@ mkdir -p /opt/local/etc/httpd/ssl || true
 chmod 0640 /opt/local/etc/httpd/ssl
 ln -nfs /opt/local/etc/httpd/ssl /opt/local/etc/httpd/tls
 
-echo "* Setup spiped"
-groupadd -g 120 spiped
-useradd -m -s /usr/bin/false -d /nonexistent -u 120 -g spiped spiped
-dd if=/dev/urandom bs=32 count=1 2>/dev/null | shasum -a 512 | awk '{print $1}' | tr -d '\n' > /etc/ssh/spiped.key
-chmod 0640 /etc/ssh/spiped.key
-chown root:spiped /etc/ssh/spiped.key
-svccfg delete svc:/pkgsrc/spiped:default
-
-echo "* Setup proxysql";
-pkg_add https://download.qutic.com/extras/proxysql-1.4.7.tgz || true
-mkdir -p /opt/local/var/proxysql
-groupadd -g 130 proxysql
-useradd -m -s /usr/bin/false -d /opt/local/var/proxysql -u 130 -g proxysql proxysql
-chown proxysql:proxysql /opt/local/var/proxysql/
-mv /opt/local/etc/proxysql.cnf /opt/local/etc/proxysql.cnf.bak || true
-mv /opt/local/var/tmp/proxysql.cnf /opt/local/etc/proxysql.cnf
-chmod 0640 /opt/local/etc/proxysql.cnf
-chown root:proxysql /opt/local/etc/proxysql.cnf
-mv /opt/local/var/tmp/proxysql.xml /opt/local/lib/svc/manifest/proxysql.xml
-svccfg import /opt/local/lib/svc/manifest/proxysql.xml
-ln -nfs /var/svc/log/pkgsrc-proxysql:default.log /var/log/proxysql_log
+# echo "* Setup spiped"
+# groupadd -g 120 spiped
+# useradd -m -s /usr/bin/false -d /nonexistent -u 120 -g spiped spiped
+# dd if=/dev/urandom bs=32 count=1 2>/dev/null | shasum -a 512 | awk '{print $1}' | tr -d '\n' > /etc/ssh/spiped.key
+# chmod 0640 /etc/ssh/spiped.key
+# chown root:spiped /etc/ssh/spiped.key
+# svccfg delete svc:/pkgsrc/spiped:default
+#
+# echo "* Setup proxysql";
+# pkg_add https://download.qutic.com/extras/proxysql-1.4.7.tgz || true
+# mkdir -p /opt/local/var/proxysql
+# groupadd -g 130 proxysql
+# useradd -m -s /usr/bin/false -d /opt/local/var/proxysql -u 130 -g proxysql proxysql
+# chown proxysql:proxysql /opt/local/var/proxysql/
+# mv /opt/local/etc/proxysql.cnf /opt/local/etc/proxysql.cnf.bak || true
+# mv /opt/local/var/tmp/proxysql.cnf /opt/local/etc/proxysql.cnf
+# chmod 0640 /opt/local/etc/proxysql.cnf
+# chown root:proxysql /opt/local/etc/proxysql.cnf
+# mv /opt/local/var/tmp/proxysql.xml /opt/local/lib/svc/manifest/proxysql.xml
+# svccfg import /opt/local/lib/svc/manifest/proxysql.xml
+# ln -nfs /var/svc/log/pkgsrc-proxysql:default.log /var/log/proxysql_log
 
 # echo "* Enable ipfilter"
 # svcadm enable svc:/network/ipfilter:default
