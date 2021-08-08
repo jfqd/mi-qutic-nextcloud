@@ -117,6 +117,22 @@ mkdir -p /opt/local/etc/httpd/ssl || true
 chmod 0640 /opt/local/etc/httpd/ssl
 ln -nfs /opt/local/etc/httpd/ssl /opt/local/etc/httpd/tls
 
+echo "* Add commands to bash-history";
+cat >> /root/.bash_history << EOF
+sudo -u www php /var/www/htdocs/nextcloud/current/occ upgrade
+sudo -u www php /var/www/htdocs/nextcloud/current/occ maintenance:mode --off
+sudo -u www php /var/www/htdocs/nextcloud/current/occ config:system:set appstoreenabled --type boolean --value false
+sudo -u www php /var/www/htdocs/nextcloud/current/occ db:add-missing-indices
+sudo -u www php /var/www/htdocs/nextcloud/current/occ db:add-missing-columns
+su - www
+tail -f /var/log/php-fpm.log
+tail -f /var/log/nginx/access.log
+svcadm restart php-fpm ; svcadm restart nginx
+svcadm restart php-fpm
+svcadm restart nginx
+svcs -vx
+EOF
+
 # echo "* Setup spiped"
 # groupadd -g 120 spiped
 # useradd -m -s /usr/bin/false -d /nonexistent -u 120 -g spiped spiped
