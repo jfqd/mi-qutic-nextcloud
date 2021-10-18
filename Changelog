@@ -1,6 +1,12 @@
 # Changelog
 
-## 20191127.17
+## 20201019.2
+
+* update to nextcloud 21.0.5
+* add bash-history
+* disable spiped and proxysql usage
+
+## 20191127.17 (should have been: 20201019.1)
 
 * update to nextcloud 21.0.4
 * use latest base image 20201019.1
