@@ -15,7 +15,6 @@ php80-pear-HTTP
 php80-mysqli
 php80-pecl-mcrypt
 php80-mbstring
-php80-json
 php80-intl
 php80-iconv
 php80-gd
