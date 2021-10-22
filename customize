@@ -46,32 +46,32 @@ rm -rf nc-$NEXTCLOUD_VERSION/config
 
 echo "* Setup nextcloud-apps"
 NEXTCLOUD_APPS="
-	analytics-3.6.0.tar.gz
+	analytics-3.6.1.tar.gz
 	apporder.tar.gz
-	bookmarks-4.4.0.tar.gz
+	bookmarks-10.0.2.tar.gz
 	calendar.tar.gz
 	camerarawpreviews_nextcloud.tar.gz
 	checksum.tar.gz
-	cms_pico-v1.0.15.tar.gz
+	cms_pico-v1.0.16.tar.gz
 	contacts.tar.gz
-	cospend-1.3.7.tar.gz
-	dashboardcharts.0.1.3.tar.gz
+	cospend-1.4.1.tar.gz
+  dashboardcharts.0.1.3.tar.gz
 	deck.tar.gz
 	dicomviewer.tar.gz
 	emlviewer-0.0.23.tar.gz
 	epubreader-1.4.6.tar.gz
 	event_update_notification-1.3.0.tar.gz
-	files_accesscontrol-1.11.0.tar.gz
-	files_automatedtagging-1.11.0.tar.gz
+	files_accesscontrol-1.12.1.tar.gz
+	files_automatedtagging-1.12.0.tar.gz
 	files_linkeditor.tar.gz
-	files_lock-20.0.0.tar.gz
 	files_markdown.tar.gz
 	files_mindmap-0.0.25.tar.gz
 	forms.tar.gz
 	gpxpod-4.2.8.tar.gz
+  gpxedit-0.0.14.tar.gz
 	groupfolders.tar.gz
 	groupquota.tar.gz
-	keeweb-0.6.5.tar.gz
+	keeweb-0.6.6.tar.gz
 	mail.tar.gz
 	maps-0.1.9.tar.gz
 	news.tar.gz
@@ -80,11 +80,11 @@ NEXTCLOUD_APPS="
 	phonetrack-0.6.9.tar.gz
 	polls.tar.gz
 	quota_warning-1.11.0.tar.gz
-	side_menu_v1.26.0.tar.gz
-	spreed-11.3.1.tar.gz
+	side_menu_v1.28.0.tar.gz
+	spreed-12.1.2.tar.gz
 	tasks.tar.gz
 	telephoneprovider.tar.gz
-	timetracker-0.0.68.tar.gz
+	timetracker-0.0.72.tar.gz
 	video_converter.tar.gz
 "
 
