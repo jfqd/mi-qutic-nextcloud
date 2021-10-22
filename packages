@@ -29,7 +29,6 @@ php80-imap
 php80-apcu
 php80-pcntl
 php80-redis
-php80-imagick
 php80-xsl
 php80-gmp
 # sql
