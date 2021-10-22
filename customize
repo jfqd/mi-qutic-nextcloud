@@ -114,7 +114,7 @@ mkdir -p /var/log/httpd/old
 mkdir -p /opt/local/etc/httpd/ssl || true
 chmod 0640 /opt/local/etc/httpd/ssl
 ln -nfs /opt/local/etc/httpd/ssl /opt/local/etc/httpd/tls
-pecl install -o -f imagick
+# pecl install -o -f imagick
 
 echo "* Add commands to bash-history";
 cat >> /root/.bash_history << EOF
