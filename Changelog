@@ -1,5 +1,10 @@
 # Changelog
 
+## 20201019.3
+
+* update to nextcloud 22.2.0
+* upgrade to php80
+
 ## 20201019.2
 
 * update to nextcloud 21.0.5
