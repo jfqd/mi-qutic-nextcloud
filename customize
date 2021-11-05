@@ -130,6 +130,7 @@ svcadm restart php-fpm
 svcadm restart nginx
 svcs -vx
 EOF
+chmod 0600 /root/.bash_history
 
 # echo "* Enable ipfilter"
 # svcadm enable svc:/network/ipfilter:default
