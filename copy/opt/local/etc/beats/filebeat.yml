@@ -1,0 +1,92 @@
+###################### Filebeat Configuration Example #########################
+
+# This file is an example configuration file highlighting only the most common
+# options. The filebeat.reference.yml file from the same directory contains all the
+# supported options with more comments. You can use it as a reference.
+#
+# You can find the full configuration reference here:
+# https://www.elastic.co/guide/en/beats/filebeat/index.html
+
+# For more available modules and options, please see the filebeat.reference.yml sample
+# configuration file.
+
+#=========================== Filebeat inputs =============================
+
+filebeat.inputs:
+
+- type: log
+  enabled: true
+  paths:
+    - "/var/adm/messages"
+  fields:
+    "@tags": "syslog"
+    "@type": "syslog"
+  fields_under_root: true
+
+- type: log
+  enabled: true
+  paths:
+    - "/var/adm/sulog"
+  fields:
+    "@tags": "sulog"
+    "@type": "auth"
+  fields_under_root: true
+
+- type: log
+  enabled: true
+  paths:
+    - "/var/log/authlog"
+  fields:
+    "@tags": "authlog"
+    "@type": "auth"
+  fields_under_root: true
+
+- type: log
+  enabled: true
+  paths:
+    - "/data/shared/data/nextcloud.log"
+  fields:
+    "@tags": "nextcloud"
+    "@type": "owncloud"
+  fields_under_root: true
+
+#================================ General =====================================
+
+#name: <will use hostname automatically>
+
+#tags: ["mx"]
+
+fields_under_root: true
+fields:
+  "@source_host": "host.example.com"
+
+# ================================= Processors =================================
+
+processors:
+- rename:
+    fields:
+     - from: "message"
+       to: "@message"
+- drop_fields:
+    fields: ["input", "prospector", "beat", "log", "offset", "host", "@metadata"]
+
+#================================ Outputs =====================================
+
+output.redis:
+  enabled: true
+  hosts: ["127.0.0.1"]
+  index: "logstash"
+  key: "logstash"
+  datatype: "list"
+  db: 0
+  timeout: 5
+
+#================================ Logging =====================================
+
+logging.level: info
+logging.to_files: true
+logging.files:
+  path: /var/log/beats
+  name: filebeat.log
+  keepfiles: 7
+  permissions: 0644
