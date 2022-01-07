@@ -5,7 +5,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any command fail
 set -o errexit
 
-NEXTCLOUD_VERSION="22.2.2"
+NEXTCLOUD_VERSION="22.2.3"
 DESTDIR="/var/www/htdocs/nextcloud"
 
 MUNIN_PLUGINS="
@@ -82,7 +82,7 @@ NEXTCLOUD_APPS="
   previewgenerator.tar.gz
 	quota_warning-1.11.0.tar.gz
 	side_menu_v1.28.0.tar.gz
-	spreed-12.1.2.tar.gz
+	spreed-12.2.2.tar.gz
 	tasks.tar.gz
 	telephoneprovider.tar.gz
 	timetracker-0.0.72.tar.gz
