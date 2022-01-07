@@ -1,5 +1,12 @@
 # Changelog
 
+## 20201019.4
+
+* update to nextcloud 22.2.3
+* use latest base image
+* switch from beaver to beats
+* decrease php-fpm workers
+
 ## 20201019.3
 
 * update to nextcloud 22.2.0
