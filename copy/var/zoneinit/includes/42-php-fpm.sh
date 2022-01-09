@@ -39,6 +39,11 @@ if mdata-get nginx_fpm 1>/dev/null 2>&1; then
     # Disable Apache
     /usr/sbin/svcadm disable apache
 
+    # remove httpd cron-log-helper
+    sed -i \
+        "s|.*/usr/bin/ls -1dt /var/log/httpd/access.*|# removed httpd cron-log-helper|" \
+        /var/spool/cron/crontabs/root
+    
     # Enable PHP-FPM
     /usr/sbin/svcadm enable svc:/pkgsrc/php-fpm:default
     /usr/sbin/svcadm enable nginx
