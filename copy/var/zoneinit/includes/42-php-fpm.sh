@@ -29,8 +29,6 @@ else
   sed -i "s:ServerAlias SERVER_ALIAS::g" /opt/local/etc/httpd/vhosts/01-nextcloud.conf
 fi
 
-echo "/opt/local/bin/sed -i \"s#/var/log/php-fpm.log.*##\" /etc/logadm.conf" >> /opt/local/bin/uptodate
-
 #################################
 # now decide which one to use
 #
@@ -47,8 +45,10 @@ if mdata-get nginx_fpm 1>/dev/null 2>&1; then
     # Enable PHP-FPM
     /usr/sbin/svcadm enable svc:/pkgsrc/php-fpm:default
     /usr/sbin/svcadm enable nginx
+    echo "/opt/local/bin/sed -i \"s#/var/log/nginx/.*##\" /etc/logadm.conf" >> /opt/local/bin/uptodate
   fi
 else
   # Enable apache
   /usr/sbin/svcadm enable svc:/pkgsrc/apache:default
+  echo "/opt/local/bin/sed -i \"s#/var/log/php-fpm.log.*##\" /etc/logadm.conf" >> /opt/local/bin/uptodate
 fi
