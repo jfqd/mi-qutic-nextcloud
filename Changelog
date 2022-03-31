@@ -2,8 +2,9 @@
 
 ## 20201019.5
 
-* update to nextcloud 22.2.4
+* update to nextcloud 22.2.6
 * remove httpd cron-log-helper
+* use latest base image 20201019.5
 
 ## 20201019.4
 
