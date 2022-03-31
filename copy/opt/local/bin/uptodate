@@ -17,7 +17,6 @@ fi
 
 /usr/bin/chown redis:redis /opt/local/etc/redis.conf
 /usr/sbin/svcadm clear redis 2>/dev/null
-/usr/bin/cp /opt/local/lib/munin/plugins/ps_.bak /opt/local/lib/munin/plugins/ps_
 sudo -u www php /var/www/htdocs/nextcloud/current/occ upgrade
 sudo -u www php /var/www/htdocs/nextcloud/current/occ maintenance:mode --off
 /usr/bin/svcs -vx

@@ -8,16 +8,6 @@ set -o errexit
 NEXTCLOUD_VERSION="22.2.4"
 DESTDIR="/var/www/htdocs/nextcloud"
 
-MUNIN_PLUGINS="
-	apache_accesses
-	apache_processes
-	apache_volume
-	httpd_memory
-	redis_connected_clients
-	redis_per_sec
-	redis_used_memory
-"
-
 echo "* Remove unused httpd config files"
 HTTPD_CONF_RM="httpd-autoindex.conf
 httpd-dav.conf
@@ -106,9 +96,6 @@ chown -R www:www "$DESTDIR"
 
 echo "* Change www for cronjobs"
 usermod -d "$DESTDIR" -s /usr/bin/bash www
-
-echo "* Activate munin plugins"
-/opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
 # Configuring image specific packages
 echo "* Configuring image specific packages.";

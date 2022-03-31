@@ -65,7 +65,6 @@ vmadm create << EOF
     "mail_auth_user":        "you@example.com",
     "mail_auth_pass":        "smtp-account-password",
     "mail_adminaddr":        "report@example.com",
-    "munin_master_allow":    "munin-master.example.com",
     "vfstab":                "storage.example.com:/export/data    -       /data    nfs     -       yes     rw,bg,intr",
     "server_name":           "nextcloud.example.com",
     "server_alias":          "nc.example.com",
