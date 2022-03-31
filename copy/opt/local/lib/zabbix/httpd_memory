@@ -1,0 +1,28 @@
+#!/opt/local/bin/ruby
+
+def output_config
+  puts <<-END
+graph_category App
+graph_title Apache virtual memory in MB
+graph_vlabel count
+
+memory.label memory
+END
+  exit 0
+end
+
+def output_values
+  status = `/usr/bin/ps -eo comm,vsz,rss | /opt/local/bin/grep httpd | /usr/bin/awk '{ print $2 }'`
+  unless $?.success?
+    $stderr.puts "failed executing ps"
+    exit 1
+  end
+  memory = (status.split(/\n/).map {|i| i.to_i}.inject(0, :+) / 1024)
+  puts "memory.value #{memory}"
+end
+
+if ARGV[0] == "config"
+  output_config
+else
+  output_values
+end
