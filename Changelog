@@ -1,5 +1,11 @@
 # Changelog
 
+
+## 20201019.6
+
+* fix nginx.conf for other well-known
+* update to nextcloud 23.0.4
+
 ## 20201019.5
 
 * update to nextcloud 22.2.6
