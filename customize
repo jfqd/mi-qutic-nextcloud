@@ -36,48 +36,48 @@ rm -rf nc-$NEXTCLOUD_VERSION/config
 
 echo "* Setup nextcloud-apps"
 NEXTCLOUD_APPS="
-	analytics-4.2.1.tar.gz
-	apporder.tar.gz
-	bookmarks-10.2.1.tar.gz
-	calendar-v3.2.2.tar.gz
-	camerarawpreviews_nextcloud.tar.gz
-	checksum.tar.gz
-	cms_pico-v1.0.18.tar.gz
-	contacts-v4.1.0.tar.gz
-	cospend-1.4.6.tar.gz
-  collectives-0.22.22.tar.gz
-	deck-v1.5.6.tar.gz
-	dicomviewer-1.2.3.tar.gz
-	emlviewer-1.0.1.tar.gz
-	epubreader-1.4.7.tar.gz
-	event_update_notification-v1.4.0.tar.gz
-	files_accesscontrol-1.12.1.tar.gz
-	files_automatedtagging-1.12.0.tar.gz
-	files_linkeditor.tar.gz
+  analytics-4.2.1.tar.gz
+  apporder.tar.gz
+  bookmarks-10.3.1.tar.gz
+  calendar-v3.3.0.tar.gz
+  camerarawpreviews_nextcloud.tar.gz
+  checksum.tar.gz
+  cms_pico-v1.0.19.tar.gz
+  collectives-1.1.0.tar.gz
+  contacts-v4.1.0.tar.gz
+  cospend-1.4.6.tar.gz
+  deck-v1.6.1.tar.gz
+  dicomviewer-1.2.3.tar.gz
+  emlviewer.tar.gz
+  epubreader-1.4.7.tar.gz
+  event_update_notification-v1.5.0.tar.gz
+  files_accesscontrol-v1.13.0.tar.gz
+  files_automatedtagging-v1.13.0.tar.gz
+  files_linkeditor.tar.gz
   files_lock-20.1.0.tar.gz
-	files_markdown.tar.gz
-	files_mindmap-0.0.26.tar.gz
-	forms-v2.4.0.tar.gz
-	gpxpod-4.3.0.tar.gz
+  files_markdown.tar.gz
+  files_mindmap-0.0.26.tar.gz
+  forms-v2.5.0.tar.gz
   gpxedit-0.0.14.tar.gz
-	groupfolders.tar.gz
-	groupquota.tar.gz
-	keeweb-0.6.8.tar.gz
-	mail-v1.11.7.tar.gz
-	maps-0.1.10.tar.gz
-	news.tar.gz
-	notes.tar.gz
-	onlyoffice.tar.gz
-	phonetrack-0.7.0.tar.gz
-	polls.tar.gz
+  gpxpod-4.3.0.tar.gz
+  groupfolders.tar.gz
+  groupquota.tar.gz
+  keeweb-0.6.8.tar.gz
+  mail-v1.12.0.tar.gz
+  maps-0.1.10.tar.gz
+  news.tar.gz
+  notes.tar.gz
+  onlyoffice.tar.gz
+  phonetrack-0.7.0.tar.gz
+  polls.tar.gz
   previewgenerator.tar.gz
-	quota_warning-v1.13.1.tar.gz
-	side_menu_v2.3.4.tar.gz
-	spreed-12.2.4.tar.gz
-	tasks.tar.gz
-	telephoneprovider.tar.gz
-	timetracker-0.0.73.tar.gz
-	video_converter.tar.gz
+  quota_warning-v1.14.0.tar.gz
+  side_menu_v2.3.5.tar.gz
+  spreed-v13.0.5.tar.gz
+  tasks.tar.gz
+  telephoneprovider.tar.gz
+  timetracker-0.0.74.tar.gz
+  video_converter.tar.gz
 "
 
 cd nc-${NEXTCLOUD_VERSION}/apps
