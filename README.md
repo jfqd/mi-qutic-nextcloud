@@ -4,7 +4,7 @@ use [jfqd/mi-qutic.base](https://github.com/jfqd/mi-qutic-base) to create a prov
 
 ## description
 
-image with nextcloud, apache-24 and php71.
+image with nextcloud, apache-24 or nginx and php80.
 
 ## build the image
 
