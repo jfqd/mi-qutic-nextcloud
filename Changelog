@@ -1,5 +1,10 @@
 # Changelog
 
+## 20220708.0
+
+* update to nextcloud 23.0.6
+* update app-versions
+* use latest base image 20220708
 
 ## 20201019.6
 
