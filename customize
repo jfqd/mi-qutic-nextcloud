@@ -5,7 +5,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any command fail
 set -o errexit
 
-NEXTCLOUD_VERSION="24.0.3"
+NEXTCLOUD_VERSION="24.0.5"
 DESTDIR="/var/www/htdocs/nextcloud"
 
 echo "* Remove unused httpd config files"
@@ -39,6 +39,7 @@ NEXTCLOUD_APPS="
   analytics-4.3.1.tar.gz
   appointments.tar.gz
   apporder.tar.gz
+  bbb-v2.3.1.tar.gz
   bookmarks-10.5.1.tar.gz
   calendar-v3.4.2.tar.gz
   camerarawpreviews_nextcloud.tar.gz
