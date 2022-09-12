@@ -1,5 +1,12 @@
 # Changelog
 
+## 24.0.5
+
+* update apps to latest
+* change naming convetion for image version
+* update to nextcloud 24.0.5
+* include bbb-app
+
 ## 20220708.2
 
 * update to nextcloud 24.0.3

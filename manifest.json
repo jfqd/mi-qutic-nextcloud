@@ -1,7 +1,7 @@
 {
   "name":         "qutic-nextcloud",
-  "version":      "20220708.2",
-  "description":  "qutic nextcloud 24.0.3 image",
+  "version":      "24.0.5",
+  "description":  "qutic nextcloud 24.0.5 image",
   "organization": "qutic development",
   "brand":        "nextcloud instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-nextcloud",
@@ -30,6 +30,6 @@
     "data_path":                    {"type": "text", "description": "path of the nextcloud data directory"},
     "config_path":                  {"type": "text", "description": "path of the nextcloud config directory"},
     "nginx_fpm":                    {"type": "text", "description": "set to true if nginx with php-fpm should be used instead of apache mpm-prefork"},
-    "cronjob_all_files":            {"type": "text", "description": "cronjob for scanning all files. Set to false to skip"},
+    "cronjob_all_files":            {"type": "text", "description": "cronjob for scanning all files. Set to false to skip"}
   }
 }
