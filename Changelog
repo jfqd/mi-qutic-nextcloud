@@ -2,6 +2,7 @@
 
 ## 24.0.5
 
+* use latest base image
 * update apps to latest
 * change naming convetion for image version
 * update to nextcloud 24.0.5
