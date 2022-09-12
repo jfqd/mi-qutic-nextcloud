@@ -40,20 +40,21 @@ NEXTCLOUD_APPS="
   appointments.tar.gz
   apporder.tar.gz
   bbb-v2.3.1.tar.gz
-  bookmarks-10.5.1.tar.gz
-  calendar-v3.4.2.tar.gz
+  bookmarks-11.0.1.tar.gz
+  calendar-v3.5.0.tar.gz
+  calendar_news.tar.gz
   camerarawpreviews_nextcloud.tar.gz
   checksum.tar.gz
   cms_pico-v1.0.19.tar.gz
-  collectives-1.3.0.tar.gz
-  contacts-v4.1.1.tar.gz
-  cospend-1.4.8.tar.gz
+  collectives-1.5.0.tar.gz
+  contacts-v4.2.0.tar.gz
+  cospend-1.4.10.tar.gz
   deck-v1.7.1.tar.gz
   dicomviewer-1.2.3.tar.gz
   emlviewer-1.0.2.tar.gz
   epubreader-1.4.7.tar.gz
   event_update_notification-v1.5.0.tar.gz
-  files_accesscontrol-v1.14.0.tar.gz
+  files_accesscontrol-v1.14.1.tar.gz
   files_automatedtagging-v1.14.0.tar.gz
   files_linkeditor.tar.gz
   files_lock-v24.0.1.tar.gz
@@ -65,8 +66,8 @@ NEXTCLOUD_APPS="
   groupfolders-v12.0.1.tar.gz
   groupquota.tar.gz
   keeweb-0.6.9.tar.gz
-  mail-v1.13.6.tar.gz
-  maps-0.2.0.tar.gz
+  mail-v1.13.8.tar.gz
+  maps-0.2.1.tar.gz
   news.tar.gz
   notes.tar.gz
   onlyoffice.tar.gz
@@ -74,9 +75,9 @@ NEXTCLOUD_APPS="
   polls.tar.gz
   previewgenerator-v5.0.0.tar.gz
   quota_warning-v1.14.0.tar.gz
-  side_menu_v2.4.1.tar.gz
+  side_menu_v2.5.1.tar.gz
   sip_trip_phone.tar.gz
-  spreed-v14.0.3.tar.gz
+  spreed-v14.0.4.tar.gz
   telephoneprovider.tar.gz
   timetracker-0.0.75.tar.gz
   video_converter.tar.gz
