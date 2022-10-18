@@ -44,5 +44,5 @@ ap24-modsecurity
 nginx
 sudo
 redis
-ffmpeg4
+ffmpeg5
 htop
