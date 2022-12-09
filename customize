@@ -5,7 +5,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any command fail
 set -o errexit
 
-NEXTCLOUD_VERSION="24.0.5"
+NEXTCLOUD_VERSION="24.0.8"
 DESTDIR="/var/www/htdocs/nextcloud"
 
 echo "* Remove unused httpd config files"
@@ -36,50 +36,50 @@ rm -rf nc-$NEXTCLOUD_VERSION/config
 
 echo "* Setup nextcloud-apps"
 NEXTCLOUD_APPS="
-  analytics-4.3.1.tar.gz
+  analytics-4.5.1.tar.gz
   appointments.tar.gz
   apporder.tar.gz
-  bbb-v2.3.1.tar.gz
-  bookmarks-11.0.1.tar.gz
-  calendar-v3.5.0.tar.gz
+  bbb-v2.4.0.tar.gz
+  bookmarks-11.0.4.tar.gz
   calendar_news.tar.gz
+  calendar-v3.5.2.tar.gz
   camerarawpreviews_nextcloud.tar.gz
   checksum.tar.gz
-  cms_pico-v1.0.19.tar.gz
-  collectives-1.5.0.tar.gz
-  contacts-v4.2.0.tar.gz
+  cms_pico-v1.0.20.tar.gz
+  collectives-1.6.3.tar.gz
+  contacts-v4.2.2.tar.gz
   cospend-1.4.10.tar.gz
-  deck-v1.7.1.tar.gz
-  dicomviewer-1.2.3.tar.gz
-  emlviewer-1.0.2.tar.gz
-  epubreader-1.4.7.tar.gz
-  event_update_notification-v1.5.0.tar.gz
+  deck-v1.7.3.tar.gz
+  dicomviewer-1.2.4.tar.gz
+  emlviewer-1.0.4.tar.gz
+  event_update_notification-v2.0.0.tar.gz
   files_accesscontrol-v1.14.1.tar.gz
   files_automatedtagging-v1.14.0.tar.gz
   files_linkeditor.tar.gz
-  files_lock-v24.0.1.tar.gz
   files_markdown.tar.gz
-  files_mindmap-0.0.26.tar.gz
+  files_mindmap-0.0.27.tar.gz
+  files_reader-1.5.3.tar.gz
   forms.tar.gz
   gpxedit-0.0.14.tar.gz
   gpxpod-4.3.0.tar.gz
-  groupfolders-v12.0.1.tar.gz
+  groupfolders.tar.gz
   groupquota.tar.gz
-  keeweb-0.6.9.tar.gz
-  mail-v1.13.8.tar.gz
+  keeweb-0.6.10.tar.gz
+  libresign.tar.gz
+  mail-v1.14.5.tar.gz
   maps-0.2.1.tar.gz
   news.tar.gz
   notes.tar.gz
+  oidc_login.tar.gz
   onlyoffice.tar.gz
-  phonetrack-0.7.0.tar.gz
+  phonetrack-0.7.2.tar.gz
   polls.tar.gz
-  previewgenerator-v5.0.0.tar.gz
-  quota_warning-v1.14.0.tar.gz
-  side_menu_v2.5.1.tar.gz
+  previewgenerator-v5.1.1.tar.gz
+  quota_warning-v1.15.0.tar.gz
   sip_trip_phone.tar.gz
-  spreed-v14.0.4.tar.gz
+  spreed-v14.0.7.tar.gz
   telephoneprovider.tar.gz
-  timetracker-0.0.75.tar.gz
+  timetracker-0.0.77.tar.gz
   video_converter.tar.gz
 "
 
