@@ -76,6 +76,7 @@ NEXTCLOUD_APPS="
   polls.tar.gz
   previewgenerator-v5.1.1.tar.gz
   quota_warning-v1.15.0.tar.gz
+  side_menu_v2.5.1.tar.gz
   sip_trip_phone.tar.gz
   spreed-v14.0.7.tar.gz
   telephoneprovider.tar.gz
