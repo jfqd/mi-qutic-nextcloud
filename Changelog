@@ -1,5 +1,10 @@
 # Changelog
 
+## 25.0.5 - 2023-04-07
+
+* update to nextcloud 25.0.5
+* use latest base image
+
 ## 24.0.9 - 2023-02-04
 
 * update to nextcloud 24.0.9
