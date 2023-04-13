@@ -40,9 +40,8 @@ NEXTCLOUD_APPS="
   appointments.tar.gz
   apporder.tar.gz
   bbb-v2.4.0.tar.gz
-  bookmarks-11.0.4.tar.gz
-  calendar_news.tar.gz
-  calendar-v3.5.2.tar.gz
+  bookmarks-12.1.0.tar.gz
+  calendar-v4.3.2.tar.gz
   camerarawpreviews_nextcloud.tar.gz
   checksum.tar.gz
   cms_pico-v1.0.21.tar.gz
@@ -75,7 +74,7 @@ NEXTCLOUD_APPS="
   phonetrack-0.7.4.tar.gz
   polls.tar.gz
   previewgenerator-v5.2.2.tar.gz
-  quota_warning-v1.15.0.tar.gz
+  quota_warning-v1.16.0.tar.gz
   side_menu_v3.7.2.tar.gz
   sip_trip_phone.tar.gz
   spreed-v15.0.5.tar.gz
