@@ -5,7 +5,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any command fail
 set -o errexit
 
-NEXTCLOUD_VERSION="25.0.5"
+NEXTCLOUD_VERSION="26.0.2"
 DESTDIR="/var/www/htdocs/nextcloud"
 
 echo "* Remove unused httpd config files"
@@ -36,47 +36,45 @@ rm -rf nc-$NEXTCLOUD_VERSION/config
 
 echo "* Setup nextcloud-apps"
 NEXTCLOUD_APPS="
-  analytics-4.8.0.tar.gz
+  analytics-4.9.3.tar.gz
   appointments.tar.gz
   bbb-v2.4.0.tar.gz
-  bookmarks-12.1.0.tar.gz
-  calendar-v4.3.2.tar.gz
+  bookmarks-13.0.1.tar.gz
+  calendar-v4.4.0.tar.gz
   camerarawpreviews_nextcloud.tar.gz
   checksum.tar.gz
   cms_pico-v1.0.21.tar.gz
-  collectives-2.4.0.tar.gz
-  contacts-v5.2.0.tar.gz
-  cospend-1.5.8.tar.gz
-  deck-v1.8.3.tar.gz
+  collectives-2.5.0.tar.gz
+  contacts-v5.3.0.tar.gz
+  cospend-1.5.10.tar.gz
+  deck-v1.9.2.tar.gz
   dicomviewer-1.2.4.tar.gz
   emlviewer-1.0.7.tar.gz
-  event_update_notification-v2.1.0.tar.gz
-  files_accesscontrol-v1.15.1.tar.gz
-  files_automatedtagging-v1.15.3.tar.gz
+  event_update_notification-v2.2.0.tar.gz
+  files_accesscontrol-v1.16.0.tar.gz
+  files_automatedtagging-v1.16.1.tar.gz
   files_linkeditor.tar.gz
-  files_markdown.tar.gz
-  files_mindmap-0.0.27.tar.gz
-  files_reader-1.5.3.tar.gz
-  forms.tar.gz
-  gpxedit-0.0.14.tar.gz
-  gpxpod-5.0.9.tar.gz
-  groupfolders-v13.1.1.tar.gz
-  groupquota-v0.1.10.tar.gz
+  files_markdown-v2.4.0.tar.gz
+  files_mindmap-0.0.28.tar.gz
+  forms-v3.3.0.tar.gz
+  gpxpod-5.0.11.tar.gz
+  groupfolders-v14.0.2.tar.gz
+  groupquota-v0.1.11.tar.gz
   keeweb-0.6.12.tar.gz
-  libresign-v6.3.0.tar.gz
-  mail-v2.2.5.tar.gz
+  libresign-v7.1.1.tar.gz
+  mail-v3.2.0.tar.gz
   maps-1.0.2.tar.gz
   news.tar.gz
   notes.tar.gz
-  oidc-0.4.7.tar.gz
+  oidc-0.6.0.tar.gz
   onlyoffice.tar.gz
-  phonetrack-0.7.4.tar.gz
+  phonetrack-0.7.6.tar.gz
   polls.tar.gz
-  previewgenerator-v5.2.2.tar.gz
-  quota_warning-v1.16.0.tar.gz
+  previewgenerator-v5.3.0.tar.gz
+  quota_warning-v1.17.0.tar.gz
   side_menu_v3.7.2.tar.gz
   sip_trip_phone.tar.gz
-  spreed-v15.0.5.tar.gz
+  spreed-v16.0.4.tar.gz
   timetracker-0.0.79.tar.gz
   video_converter.tar.gz
 "
