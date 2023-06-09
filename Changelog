@@ -1,5 +1,10 @@
 # Changelog
 
+## 26.0.2 - 2023-06-09
+
+* update to nextcloud 26.0.2
+* apporder is no longer working
+
 ## 25.0.5 - 2023-04-07
 
 * update to nextcloud 25.0.5
