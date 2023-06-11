@@ -33,6 +33,7 @@ php80-redis
 php80-xsl
 php80-gmp
 php80-sodium
+php80-sysvsem
 # sql
 percona-client
 # web
