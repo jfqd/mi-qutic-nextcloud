@@ -1,5 +1,10 @@
 # Changelog
 
+## 26.0.2.1 - 2023-06-11
+
+* add missing sysvsem package
+* fix app version
+
 ## 26.0.2 - 2023-06-09
 
 * update to nextcloud 26.0.2
