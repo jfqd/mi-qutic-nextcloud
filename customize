@@ -88,6 +88,9 @@ for nc_app in ${NEXTCLOUD_APPS[@]}; do
   fi
 done
 
+echo "* Remove any mac double files"
+find /var/www/htdocs/nextcloud/current/apps/ -name ._* -exec rm {} \;
+
 echo "* Setup nextcloud"
 cd $DESTDIR
 ln -nfs $DESTDIR/releases/nc-$NEXTCLOUD_VERSION current
