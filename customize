@@ -25,76 +25,7 @@ for CONF_RM in ${HTTPD_CONF_RM}; do
   rm -f /opt/local/etc/httpd/${CONF_RM}
 done
 
-echo "* Install nextcloud"
-mkdir -p "${DESTDIR}/releases"
-cd "${DESTDIR}/releases"
-curl -s -L -O https://download.qutic.com/src/nextcloud/nextcloud-$NEXTCLOUD_VERSION.tar.bz2
-tar xf nextcloud-$NEXTCLOUD_VERSION.tar.bz2
-rm nextcloud-$NEXTCLOUD_VERSION.tar.bz2
-mv nextcloud nc-$NEXTCLOUD_VERSION
-rm -rf nc-$NEXTCLOUD_VERSION/config
-
-echo "* Setup nextcloud-apps"
-NEXTCLOUD_APPS="
-  analytics-4.9.3.tar.gz
-  appointments.tar.gz
-  bbb-v2.4.0.tar.gz
-  bookmarks-13.0.1.tar.gz
-  calendar-v4.4.0.tar.gz
-  camerarawpreviews_nextcloud.tar.gz
-  checksum.tar.gz
-  cms_pico-v1.0.21.tar.gz
-  collectives-2.5.0.tar.gz
-  contacts-v5.3.0.tar.gz
-  cospend-1.5.10.tar.gz
-  deck-v1.9.2.tar.gz
-  dicomviewer-1.2.4.tar.gz
-  emlviewer-1.0.7.tar.gz
-  event_update_notification-v2.2.0.tar.gz
-  files_accesscontrol-v1.16.0.tar.gz
-  files_automatedtagging-v1.16.1.tar.gz
-  files_linkeditor.tar.gz
-  files_markdown-v2.4.0.tar.gz
-  files_mindmap-0.0.28.tar.gz
-  forms-v3.3.0.tar.gz
-  gpxpod-5.0.11.tar.gz
-  groupfolders-v14.0.2.tar.gz
-  groupquota-v0.1.11.tar.gz
-  keeweb-0.6.12.tar.gz
-  libresign-v7.1.1.tar.gz
-  mail-v3.2.0.tar.gz
-  maps-1.0.2.tar.gz
-  news.tar.gz
-  notes.tar.gz
-  oidc-0.6.0.tar.gz
-  onlyoffice.tar.gz
-  phonetrack-0.7.6.tar.gz
-  polls.tar.gz
-  previewgenerator-v5.3.0.tar.gz
-  quota_warning-v1.17.0.tar.gz
-  side_menu_v3.8.0.tar.gz
-  sip_trip_phone.tar.gz
-  spreed-v16.0.4.tar.gz
-  timetracker-0.0.79.tar.gz
-  video_converter.tar.gz
-"
-
-cd nc-${NEXTCLOUD_VERSION}/apps
-for nc_app in ${NEXTCLOUD_APPS[@]}; do
-  /opt/local/bin/curl -s -L -O "https://download.qutic.com/src/nextcloud/apps-$NEXTCLOUD_VERSION/${nc_app}"
-  if [[ -f "${nc_app}" ]]; then
-    echo "** Installing app: ${nc_app}"
-    /usr/bin/gtar xf "${nc_app}" && rm "${nc_app}" || true
-  fi
-done
-
-echo "* Remove any mac double files"
-find /var/www/htdocs/nextcloud/current/apps/ -name ._* -exec rm {} \;
-
-echo "* Setup nextcloud"
-cd $DESTDIR
-ln -nfs $DESTDIR/releases/nc-$NEXTCLOUD_VERSION current
-chown -R www:www "$DESTDIR"
+/opt/local/bin/install_nc_version "${NEXTCLOUD_VERSION}"
 
 echo "* Change www for cronjobs"
 usermod -d "$DESTDIR" -s /usr/bin/bash www

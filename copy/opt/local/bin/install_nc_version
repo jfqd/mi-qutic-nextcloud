@@ -12,6 +12,7 @@ if [[ -z "${NEXTCLOUD_VERSION}" ]]; then
   exit 1
 fi
 
+echo "* Install nextcloud version: ${NEXTCLOUD_VERSION}"
 cd "${DESTDIR}/releases"
 curl -LO https://download.qutic.com/src/nextcloud/nextcloud-$NEXTCLOUD_VERSION.tar.bz2
 tar xf nextcloud-$NEXTCLOUD_VERSION.tar.bz2
@@ -19,6 +20,7 @@ rm nextcloud-$NEXTCLOUD_VERSION.tar.bz2
 mv nextcloud nc-$NEXTCLOUD_VERSION
 rm -rf nc-$NEXTCLOUD_VERSION/config
 
+echo "* Setup nextcloud-apps"
 NEXTCLOUD_APPS="
   analytics-4.9.3.tar.gz
   appointments.tar.gz
@@ -73,30 +75,38 @@ for nc_app in ${NEXTCLOUD_APPS[@]}; do
 done
 
 if [[ -L "${DESTDIR}/current" ]]; then
-  PREVIOUS_RELEASE=$(ls -l "${DESTDIR}/current" |  sed -e 's/.*-> \s*//')
+  PREVIOUS_RELEASE=$(ls -l "${DESTDIR}/current" 2>/dev/null |  sed -e 's/.*-> \s*//')
   rm "${$DESTDIR}/current"
 fi
 
+echo "* Setup nextcloud"
 cd "${DESTDIR}"
 ln -nfs $DESTDIR/releases/nc-$NEXTCLOUD_VERSION current
-find $DESTDIR/current/apps/ -name ._* -exec rm {} \;
 chown -R www:www "$DESTDIR"
+
+echo "* Remove any mac double files"
+find $DESTDIR/current/apps/ -name ._* -exec rm {} \;
 
 if [[ -z "${PREVIOUS_RELEASE}" ]]; then
   exit 0
 fi
 
-mv ${PREVIOUS_RELEASE}/config $DESTDIR/current/config
+echo "* Copy old config over from previous version"
+rm -rf "$DESTDIR/current/config"
+mv "${PREVIOUS_RELEASE}/config" "$DESTDIR/current/config"
 
 if mdata-get data_path 1>/dev/null 2>&1; then
+  echo "* Link data into place"
   DATA_PATH=`mdata-get data_path`
   cd "${DESTDIR}/current/"
   ln -nfs "$DATA_PATH" data
 fi
 
+echo "* Update Nextcloud and restart services"
 # sudo -u www php /var/www/htdocs/nextcloud/current/occ maintenance:mode --on
 sudo -u www php /var/www/htdocs/nextcloud/current/occ upgrade
 sudo -u www php /var/www/htdocs/nextcloud/current/occ db:add-missing-indices
+sudo -u www php /var/www/htdocs/nextcloud/current/occ db:add-missing-columns
 sudo -u www php /var/www/htdocs/nextcloud/current/occ maintenance:mode --off
 
 svcadm restart svc:/pkgsrc/php-fpm:default
