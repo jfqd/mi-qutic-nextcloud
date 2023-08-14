@@ -30,6 +30,7 @@
     "data_path":                    {"type": "text", "description": "path of the nextcloud data directory"},
     "config_path":                  {"type": "text", "description": "path of the nextcloud config directory"},
     "nginx_fpm":                    {"type": "text", "description": "set to true if nginx with php-fpm should be used instead of apache mpm-prefork"},
+    "fpm_max_worker":               {"type": "text", "description": "number of max fpm workers to use, default: 10"},
     "cronjob_all_files":            {"type": "text", "description": "cronjob for scanning all files. Set to false to skip"}
   }
 }

@@ -10,3 +10,12 @@ if mdata-get config_path 1>/dev/null 2>&1; then
   cd /var/www/htdocs/nextcloud/current/
   ln -nfs "$config_path" config
 fi
+
+
+if mdata-get fpm_max_worker 1>/dev/null 2>&1; then
+  WORKER=`mdata-get fpm_max_worker`
+  /opt/local/bin/sed \
+    -i \
+    -e "s#pm.max_children = 10#pm.max_children = ${WORKER}#" \
+    /etc/php-fpm.d/www.conf
+fi
