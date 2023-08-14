@@ -41,7 +41,7 @@ apache
 ap24-php82
 ap24-usdt
 # ap24-xsendfile
-ap24-modsecurity
+# ap24-modsecurity
 nginx
 sudo
 redis
