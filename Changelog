@@ -9,7 +9,6 @@
 * update apps to latest
 * upgrade php from 8.0 to 8.2
 * make nginx the default webserver
-* remove ap24-modsecurity out of dependency issues
 
 ## 26.0.2.1 - 2023-06-11
 
