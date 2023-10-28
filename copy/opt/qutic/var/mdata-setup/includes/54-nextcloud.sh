@@ -17,5 +17,5 @@ if mdata-get fpm_max_worker 1>/dev/null 2>&1; then
   /opt/local/bin/sed \
     -i \
     -e "s#pm.max_children = 10#pm.max_children = ${WORKER}#" \
-    /etc/php-fpm.d/www.conf
+    /opt/local/etc/php-fpm.d/www.conf
 fi
