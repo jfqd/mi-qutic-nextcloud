@@ -1,5 +1,11 @@
 # Changelog
 
+## 26.0.8 - 2023-11-23
+
+* update to nextcloud 26.0.8
+* fix php-fpm conf path
+* use latest qutic-base image
+
 ## 26.0.5 - 2023-08-14
 
 * update to nextcloud 26.0.5
