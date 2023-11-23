@@ -3,7 +3,6 @@
 #
 # Install Nextcloud-Upgrade
 #
-
 NEXTCLOUD_VERSION="$1"
 DESTDIR="/var/www/htdocs/nextcloud"
 
@@ -13,6 +12,7 @@ if [[ -z "${NEXTCLOUD_VERSION}" ]]; then
 fi
 
 echo "* Install nextcloud version: ${NEXTCLOUD_VERSION}"
+mkdir -p "${DESTDIR}/releases"
 cd "${DESTDIR}/releases"
 curl -LO https://download.qutic.com/src/nextcloud/nextcloud-$NEXTCLOUD_VERSION.tar.bz2
 tar xf nextcloud-$NEXTCLOUD_VERSION.tar.bz2
