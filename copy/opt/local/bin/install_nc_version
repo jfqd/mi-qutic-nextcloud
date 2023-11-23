@@ -22,47 +22,43 @@ rm -rf nc-$NEXTCLOUD_VERSION/config
 
 echo "* Setup nextcloud-apps"
 NEXTCLOUD_APPS="
-  analytics-4.9.4.tar.gz
+  analytics-4.11.1.tar.gz
   appointments.tar.gz
   bbb-v2.5.0.tar.gz
-  bookmarks-13.0.1.tar.gz
-  calendar-v4.4.4.tar.gz
+  bookmarks-13.1.1.tar.gz
+  calendar-v4.5.3.tar.gz
   camerarawpreviews_nextcloud.tar.gz
   checksum.tar.gz
   cms_pico-v1.0.21.tar.gz
-  collectives-2.7.0.tar.gz
-  contacts-v5.3.2.tar.gz
+  collectives-2.9.1.tar.gz
+  contacts-v5.4.2.tar.gz
   cospend-1.5.10.tar.gz
-  deck-v1.9.2.tar.gz
-  dicomviewer-1.2.4.tar.gz
-  emlviewer-1.0.7.tar.gz
+  deck-v1.9.4.tar.gz
+  dicomviewer-1.2.5.tar.gz
+  emlviewer-1.0.8.tar.gz
   event_update_notification-v2.2.0.tar.gz
-  files_accesscontrol-v1.16.0.tar.gz
+  files_accesscontrol-v1.16.2.tar.gz
   files_automatedtagging-v1.16.1.tar.gz
   files_linkeditor.tar.gz
   files_markdown-v2.4.1.tar.gz
-  files_mindmap-0.0.28.tar.gz
+  files_mindmap-0.0.29.tar.gz
   forms-v3.3.1.tar.gz
-  gpxpod-5.0.12.tar.gz
-  groupfolders-v14.0.4.tar.gz
-  groupquota-v0.1.11.tar.gz
+  gpxpod-5.0.13.tar.gz
   keeweb-0.6.13.tar.gz
-  libresign-v7.1.1.tar.gz
-  mail-v3.2.6.tar.gz
-  maps-1.0.2.tar.gz
+  mail-v3.4.4.tar.gz
+  maps-1.1.1.tar.gz
   news.tar.gz
   notes.tar.gz
-  oidc-0.7.0.tar.gz
+  oidc-0.7.1.tar.gz
   onlyoffice.tar.gz
   phonetrack-0.7.6.tar.gz
   polls.tar.gz
   previewgenerator-v5.3.0.tar.gz
   quota_warning-v1.17.0.tar.gz
-  side_menu_v3.8.0.tar.gz
+  side_menu_v3.11.2.tar.gz
   sip_trip_phone.tar.gz
-  spreed-v16.0.5.tar.gz
-  timetracker-0.0.79.tar.gz
-  video_converter.tar.gz
+  spreed-v16.0.8.tar.gz
+  timetracker-0.0.80.tar.gz
 "
 
 cd nc-${NEXTCLOUD_VERSION}/apps
