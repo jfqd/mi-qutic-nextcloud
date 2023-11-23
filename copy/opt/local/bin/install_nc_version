@@ -77,7 +77,7 @@ fi
 
 echo "* Setup nextcloud"
 cd "${DESTDIR}"
-ln -nfs $DESTDIR/releases/nc-$NEXTCLOUD_VERSION current
+ln -nfs $DESTDIR/releases/nc-$NEXTCLOUD_VERSION/ current
 chown -R www:www "$DESTDIR"
 
 echo "* Remove any mac double files"
