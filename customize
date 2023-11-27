@@ -37,6 +37,9 @@ mkdir -p /opt/local/etc/httpd/ssl || true
 chmod 0640 /opt/local/etc/httpd/ssl
 ln -nfs /opt/local/etc/httpd/ssl /opt/local/etc/httpd/tls
 
+echo "* Disable ssh access"
+svcadm disable svc:/network/ssh:default || true
+
 echo "* Add commands to bash-history";
 cat >> /root/.bash_history << EOF
 sudo -u www php /var/www/htdocs/nextcloud/current/occ upgrade
@@ -45,8 +48,10 @@ sudo -u www php /var/www/htdocs/nextcloud/current/occ config:system:set appstore
 sudo -u www php /var/www/htdocs/nextcloud/current/occ db:add-missing-indices
 sudo -u www php /var/www/htdocs/nextcloud/current/occ db:add-missing-columns
 su - www
+tail -f /data/shared/data/nextcloud.log
+tail -f /var/log/redis/redis.log
 tail -f /var/log/php-fpm.log
-tail -f /var/log/nginx/access.log
+tail -f /var/log/nginx/*.log
 svcadm restart php-fpm ; svcadm restart nginx
 svcadm restart php-fpm
 svcadm restart nginx
