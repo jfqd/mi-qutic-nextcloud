@@ -5,7 +5,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any command fail
 set -o errexit
 
-NEXTCLOUD_VERSION="26.0.8"
+NEXTCLOUD_VERSION="27.1.8"
 DESTDIR="/var/www/htdocs/nextcloud"
 
 echo "* Remove unused httpd config files"
