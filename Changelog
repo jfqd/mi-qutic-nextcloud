@@ -1,5 +1,11 @@
 # Changelog
 
+## 27.1.8 - 2024-04-03
+
+* update to nextcloud 27.1.8
+* update apps to latest
+* remove unsuppoted apps
+
 ## 26.0.8 - 2023-11-23
 
 * update to nextcloud 26.0.8
