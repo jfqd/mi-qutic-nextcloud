@@ -87,7 +87,7 @@ fi
 
 echo "* Copy old config over from previous version"
 rm -rf "$DESTDIR/current/config"
-mv "${PREVIOUS_RELEASE}/config" "$DESTDIR/current/config"
+cp -R "${PREVIOUS_RELEASE}/config" "$DESTDIR/current/config"
 
 if mdata-get data_path 1>/dev/null 2>&1; then
   echo "* Link data into place"
