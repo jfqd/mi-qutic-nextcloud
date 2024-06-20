@@ -22,41 +22,41 @@ rm -rf nc-$NEXTCLOUD_VERSION/config
 
 echo "* Setup nextcloud-apps"
 NEXTCLOUD_APPS="
-  analytics-4.12.0.tar.gz
+  analytics-4.13.0.tar.gz
   appointments.tar.gz
-  bbb-v2.5.0.tar.gz
-  bookmarks-13.1.3.tar.gz
-  calendar-v4.6.7.tar.gz
+  bbb-v2.6.0.tar.gz
+  bookmarks-14.2.2.tar.gz
+  calendar-v4.7.6.tar.gz
   camerarawpreviews_nextcloud.tar.gz
   checksum.tar.gz
-  collectives-2.10.1.tar.gz
+  collectives-2.12.0.tar.gz
   contacts-v5.5.3.tar.gz
   cospend-1.6.1.tar.gz
-  deck-v1.11.4.tar.gz
-  dicomviewer-1.2.5.tar.gz
+  deck-v1.12.2.tar.gz
+  dicomviewer-2.1.2.tar.gz
   emlviewer-1.0.9.tar.gz
-  event_update_notification-v2.3.0.tar.gz
-  files_automatedtagging-v1.17.0.tar.gz
+  event_update_notification-v2.4.0.tar.gz
+  files_automatedtagging-v1.18.0.tar.gz
   files_linkeditor.tar.gz
   files_markdown-v2.4.1.tar.gz
   files_mindmap-0.0.30.tar.gz
-  forms-v3.4.6.tar.gz
-  gpxpod-5.0.13.tar.gz
-  keeweb-0.6.13.tar.gz
-  mail-v3.5.7.tar.gz
-  maps-1.2.0.tar.gz
+  forms-v4.2.4.tar.gz
+  gpxpod-5.0.18.tar.gz
+  keeweb-0.6.18.tar.gz
+  mail-v3.7.1.tar.gz
+  maps-1.4.0.tar.gz
   news.tar.gz
-  notes-v4.9.4.tar.gz
-  oidc-0.8.0.tar.gz
+  notes.tar.gz
+  oidc-0.9.0.tar.gz
   onlyoffice.tar.gz
-  phonetrack-0.7.7.tar.gz
+  phonetrack-0.8.1.tar.gz
   polls.tar.gz
   previewgenerator-v5.5.0.tar.gz
   quota_warning-v1.19.0.tar.gz
-  side_menu_v3.11.8.tar.gz
+  side_menu_v3.12.0.tar.gz
   sip_trip_phone.tar.gz
-  spreed-v17.1.6.tar.gz
-  timetracker-0.0.82.tar.gz
+  spreed-v18.0.8.tar.gz
+  timetracker-0.0.83.tar.gz
 "
 
 cd nc-${NEXTCLOUD_VERSION}/apps
@@ -87,7 +87,8 @@ fi
 
 echo "* Copy old config over from previous version"
 rm -rf "$DESTDIR/current/config"
-cp -R "${PREVIOUS_RELEASE}/config" "$DESTDIR/current/config"
+mkdir "$DESTDIR/current/config"
+cp -R "${PREVIOUS_RELEASE}/config/" "$DESTDIR/current/config/"
 
 if mdata-get data_path 1>/dev/null 2>&1; then
   echo "* Link data into place"
@@ -98,6 +99,7 @@ fi
 
 echo "* Update Nextcloud and restart services"
 # sudo -u www php /var/www/htdocs/nextcloud/current/occ maintenance:mode --on
+chown -R www:www "$DESTDIR"
 sudo -u www php /var/www/htdocs/nextcloud/current/occ upgrade
 sudo -u www php /var/www/htdocs/nextcloud/current/occ db:add-missing-indices
 sudo -u www php /var/www/htdocs/nextcloud/current/occ db:add-missing-columns
