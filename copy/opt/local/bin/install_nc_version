@@ -68,27 +68,28 @@ for nc_app in ${NEXTCLOUD_APPS[@]}; do
   fi
 done
 
+cd "${DESTDIR}"
+
 if [[ -L "${DESTDIR}/current" ]]; then
   PREVIOUS_RELEASE=$(ls -l "${DESTDIR}/current" 2>/dev/null |  sed -e 's/.*-> \s*//')
-  rm "${$DESTDIR}/current"
+  rm -rf "${DESTDIR}/current"
 fi
 
 echo "* Setup nextcloud"
-cd "${DESTDIR}"
-ln -nfs $DESTDIR/releases/nc-$NEXTCLOUD_VERSION/ current
-chown -R www:www "$DESTDIR"
+ln -nfs "${DESTDIR}/releases/nc-$NEXTCLOUD_VERSION/" current
+chown -R www:www "${DESTDIR}"
 
 echo "* Remove any mac double files"
-find $DESTDIR/current/apps/ -name ._* -exec rm {} \;
+find "${DESTDIR}/current/apps/" -name ._* -exec rm {} \;
 
 if [[ -z "${PREVIOUS_RELEASE}" ]]; then
   exit 0
 fi
 
 echo "* Copy old config over from previous version"
-rm -rf "$DESTDIR/current/config"
-mkdir "$DESTDIR/current/config"
-cp -R "${PREVIOUS_RELEASE}/config/" "$DESTDIR/current/config/"
+mv "${DESTDIR}/current/config" "${DESTDIR}/current/config.bak"
+mkdir "${DESTDIR}/current/config"
+cp "${PREVIOUS_RELEASE}/config/config.php" "${DESTDIR}/current/config/"
 
 if mdata-get data_path 1>/dev/null 2>&1; then
   echo "* Link data into place"
@@ -99,11 +100,12 @@ fi
 
 echo "* Update Nextcloud and restart services"
 # sudo -u www php /var/www/htdocs/nextcloud/current/occ maintenance:mode --on
-chown -R www:www "$DESTDIR"
+chown -R www:www "${DESTDIR}"
 sudo -u www php /var/www/htdocs/nextcloud/current/occ upgrade
 sudo -u www php /var/www/htdocs/nextcloud/current/occ db:add-missing-indices
 sudo -u www php /var/www/htdocs/nextcloud/current/occ db:add-missing-columns
 sudo -u www php /var/www/htdocs/nextcloud/current/occ maintenance:mode --off
+sudo -u www php /var/www/htdocs/nextcloud/current/occ config:system:set maintenance_window_start --type=integer --value=1
 
 svcadm restart svc:/pkgsrc/php-fpm:default
 svcadm restart nginx
