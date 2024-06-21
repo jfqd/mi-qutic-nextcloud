@@ -3,6 +3,8 @@
 ## 28.0.6 - 2024-06-20
 
 * update to nextcloud 28.0.6
+* fix install script
+* extend nginx.conf
 
 ## 27.1.8 - 2024-04-03
 
