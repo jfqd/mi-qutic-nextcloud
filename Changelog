@@ -4,6 +4,7 @@
 
 * update to nextcloud 28.0.7
 * change fpm serer config
+* use latest base image
 
 ## 28.0.6 - 2024-06-20
 
