@@ -1,5 +1,10 @@
 # Changelog
 
+## 28.0.7 - 2024-07-11
+
+* update to nextcloud 28.0.7
+* change fpm serer config
+
 ## 28.0.6 - 2024-06-20
 
 * update to nextcloud 28.0.6
