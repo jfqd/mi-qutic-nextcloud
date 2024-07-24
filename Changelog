@@ -1,5 +1,11 @@
 # Changelog
 
+## 28.0.8 - 2024-07-24
+
+* update to nextcloud 28.0.8
+* remove emlviewer (issues with nc28)
+* use latest base image
+
 ## 28.0.7 - 2024-07-11
 
 * update to nextcloud 28.0.7
