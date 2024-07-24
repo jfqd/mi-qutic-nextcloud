@@ -34,7 +34,6 @@ NEXTCLOUD_APPS="
   cospend-1.6.1.tar.gz
   deck-v1.12.2.tar.gz
   dicomviewer-2.1.2.tar.gz
-  emlviewer-1.0.9.tar.gz
   event_update_notification-v2.4.0.tar.gz
   files_automatedtagging-v1.18.0.tar.gz
   files_linkeditor.tar.gz
@@ -58,6 +57,8 @@ NEXTCLOUD_APPS="
   spreed-v18.0.8.tar.gz
   timetracker-0.0.83.tar.gz
 "
+
+# emlviewer-1.0.9.tar.gz
 
 cd nc-${NEXTCLOUD_VERSION}/apps
 for nc_app in ${NEXTCLOUD_APPS[@]}; do
