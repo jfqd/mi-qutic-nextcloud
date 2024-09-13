@@ -1,5 +1,11 @@
 # Changelog
 
+## 28.0.10 - 2024-09-13
+
+* update to nextcloud 28.0.10
+* fix multiple file download
+* align with deprecation
+
 ## 28.0.8 - 2024-07-24
 
 * update to nextcloud 28.0.8
