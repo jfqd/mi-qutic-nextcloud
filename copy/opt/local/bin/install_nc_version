@@ -24,41 +24,41 @@ echo "* Setup nextcloud-apps"
 NEXTCLOUD_APPS="
   analytics-5.0.1.tar.gz
   appointments.tar.gz
-  bbb-v2.7.1.tar.gz
-  bookmarks-14.2.5.tar.gz
+  bbb-v2.7.2.tar.gz
+  bookmarks-14.2.6.tar.gz
   calendar-v4.7.16.tar.gz
   camerarawpreviews_nextcloud.tar.gz
   checksum.tar.gz
-  collectives-2.14.3.tar.gz
-  contacts-v6.0.0.tar.gz
+  collectives-2.15.1.tar.gz
+  contacts-v6.0.1.tar.gz
   cookbook-0.11.2.tar.gz
   cospend-1.6.1.tar.gz
-  deck-v1.13.1.tar.gz
-  dicomviewer-2.1.2.tar.gz
+  deck-v1.13.3.tar.gz
+  dicomviewer-2.2.1.tar.gz
   event_update_notification-v2.4.0.tar.gz
   files_automatedtagging-v1.19.0.tar.gz
   files_linkeditor.tar.gz
   files_markdown-v2.4.1.tar.gz
   files_mindmap-0.0.30.tar.gz
-  forms-v4.2.4.tar.gz
+  forms-v4.3.4.tar.gz
   gpxpod-5.0.18.tar.gz
   imageconverter.tar.gz
-  keeweb-0.6.19.tar.gz
-  mail-v3.7.8.tar.gz
+  keeweb-0.6.20.tar.gz
+  mail-v3.7.12.tar.gz
   maps-1.4.0.tar.gz
   memories.tar.gz
   news.tar.gz
   notes-v4.11.0.tar.gz
-  oidc-0.9.4.tar.gz
+  oidc-1.0.0.tar.gz
   onlyoffice.tar.gz
   phonetrack-0.8.1.tar.gz
-  polls-v7.2.3.tar.gz
-  previewgenerator-v5.6.0.tar.gz
+  polls-v7.2.5.tar.gz
+  previewgenerator-v5.7.0.tar.gz
   quota_warning-v1.20.0.tar.gz
   side_menu_v3.13.1.tar.gz
   sip_trip_phone.tar.gz
-  spreed-v19.0.9.tar.gz
-  timetracker-0.0.83.tar.gz
+  spreed-v19.0.11.tar.gz
+  timetracker-0.0.84.tar.gz
 "
 
 # emlviewer-1.0.9.tar.gz
