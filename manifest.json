@@ -1,7 +1,7 @@
 {
   "name":         "qutic-nextcloud",
-  "version":      "30.0.6",
-  "description":  "qutic nextcloud 30.0.6 image",
+  "version":      "30.0.16",
+  "description":  "qutic nextcloud 30.0.16 image",
   "organization": "qutic development",
   "brand":        "nextcloud instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-nextcloud",
