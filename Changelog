@@ -3,6 +3,7 @@
 ## 31.0.9 - 2025-09-29
 
 * update to nextcloud 31.0.9
+* fix pkgsrc new php-83 paths
 
 ## 30.0.16 - 2025-09-29
 

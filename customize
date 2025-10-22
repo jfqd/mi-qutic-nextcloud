@@ -52,8 +52,8 @@ tail -f /data/shared/data/nextcloud.log
 tail -f /var/log/redis/redis.log
 tail -f /var/log/php-fpm.log
 tail -f /var/log/nginx/*.log
-svcadm restart php-fpm ; svcadm restart nginx
-svcadm restart php-fpm
+svcadm restart php-fpm83 ; svcadm restart nginx
+svcadm restart php-fpm83
 svcadm restart nginx
 svcs -vx
 EOF

@@ -17,8 +17,8 @@ if mdata-get fpm_max_worker 1>/dev/null 2>&1; then
   /opt/local/bin/sed \
     -i \
     -e "s#pm.max_children = 10#pm.max_children = ${WORKER}#" \
-    /opt/local/etc/php-fpm.d/www.conf
-  svcadm restart svc:/pkgsrc/php-fpm:default
+    /opt/local/etc/php/8.3/php-fpm.d/www.conf
+  svcadm restart svc:/pkgsrc/php-fpm83:default
 fi
 
 if mdata-get redis_maxmemory 1>/dev/null 2>&1; then

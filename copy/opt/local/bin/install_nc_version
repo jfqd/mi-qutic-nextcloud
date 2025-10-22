@@ -112,7 +112,7 @@ sudo -u www php /var/www/htdocs/nextcloud/current/occ db:add-missing-columns
 sudo -u www php /var/www/htdocs/nextcloud/current/occ maintenance:mode --off
 sudo -u www php /var/www/htdocs/nextcloud/current/occ config:system:set maintenance_window_start --type=integer --value=1
 
-svcadm restart svc:/pkgsrc/php-fpm:default
+svcadm restart svc:/pkgsrc/php-fpm83:default
 svcadm restart nginx
 
 exit 0
