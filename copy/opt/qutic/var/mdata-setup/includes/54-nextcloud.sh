@@ -29,3 +29,8 @@ if mdata-get redis_maxmemory 1>/dev/null 2>&1; then
     /opt/local/etc/redis.conf
   svcadm restart svc:/pkgsrc/redis:default
 fi
+
+/opt/local/bin/sed \
+  -i \
+  -e "s#php-fpm.log#php-fpm83.log#" \
+  /etc/logadm.conf

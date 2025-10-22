@@ -38,6 +38,7 @@ chmod 0640 /opt/local/etc/httpd/ssl
 ln -nfs /opt/local/etc/httpd/ssl /opt/local/etc/httpd/tls
 
 echo "* Disable ssh access"
+svcadm disable svc:/network/ssh-hostkey-mdata-setup:default
 svcadm disable svc:/network/ssh:default || true
 
 echo "* Add commands to bash-history";
