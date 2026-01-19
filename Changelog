@@ -1,5 +1,12 @@
 # Changelog
 
+## 31.0.13 - 2026-01-19
+
+* update to nextcloud 31.0.13
+* add perl ExifTool
+* fix logadm.conf
+* fix pkgsrc new php-83 paths
+
 ## 31.0.9 - 2025-10-22
 
 * update to nextcloud 31.0.9
