@@ -7,7 +7,7 @@
 /usr/sbin/svcadm restart nullmailer
 
 if mdata-get nginx_fpm 1>/dev/null 2>&1; then
-  /usr/sbin/svcadm restart php-fpm83
+  /usr/sbin/svcadm restart php-fpm84
   /usr/sbin/svcadm restart nginx
   /opt/local/bin/sed -i "s#/var/log/httpd/access-.*##" /etc/logadm.conf
 else

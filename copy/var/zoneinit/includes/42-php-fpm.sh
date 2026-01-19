@@ -36,7 +36,7 @@ if [[ `mdata-get nginx_fpm 2>/dev/null` = "false" ]]; then
   
   # Enable apache
   /usr/sbin/svcadm enable svc:/pkgsrc/apache:default
-  echo "/opt/local/bin/sed -i \"s#/var/log/php-fpm83.log.*##\" /etc/logadm.conf" >> /opt/local/bin/uptodate
+  echo "/opt/local/bin/sed -i \"s#/var/log/php-fpm84.log.*##\" /etc/logadm.conf" >> /opt/local/bin/uptodate
 
 else
   #################################
@@ -47,7 +47,7 @@ else
   /usr/sbin/svcadm disable apache || true
   
   # Enable PHP-FPM
-  /usr/sbin/svcadm enable svc:/pkgsrc/php-fpm83:default
+  /usr/sbin/svcadm enable svc:/pkgsrc/php-fpm84:default
   /usr/sbin/svcadm enable nginx
   echo "/opt/local/bin/sed -i \"s#/var/log/nginx/.*##\" /etc/logadm.conf" >> /opt/local/bin/uptodate
 
