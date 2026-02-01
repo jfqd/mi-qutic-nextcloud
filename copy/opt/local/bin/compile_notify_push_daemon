@@ -1,0 +1,28 @@
+#!/usr/bin/bash
+
+if [[ -d /var/www/htdocs/nextcloud/current/apps/notify_push ]]; then
+  if [[ ! -f /var/www/htdocs/nextcloud/current/apps/notify_push/bin/x86_64_illumos/notify_push ]]; then
+
+    # stop preoceses to make memory free for the compilation
+    svcadm stop svc:/pkgsrc/php-fpm84:default
+    svcadm stop nginx
+    # install required packages
+    pkgin -y in rust git gcc13 gmake
+    (
+      cd /var/www/htdocs/nextcloud/current/apps/notify_push
+      cargo build --release
+      mkdir -p /data/shared/bin
+      cp ./target/release/notify_push /data/shared/bin/notify_push
+      mkdir -p ./bin/x86_64_illumos
+      cp ./target/release/notify_push ./bin/x86_64_illumos/notify_push
+    )
+    # cleanup
+    pkgin -y rm rust git gcc13 gmake git-contrib git-doc git-perlscripts libunwind llvm binutils
+    svcadm start svc:/pkgsrc/php-fpm84:default
+    svcadm start nginx
+
+  fi
+else
+  echo "Skip compile, notify_push app is missing!"
+  exit 1
+fi

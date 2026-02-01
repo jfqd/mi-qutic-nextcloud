@@ -50,6 +50,7 @@ NEXTCLOUD_APPS="
   music_2.5.1_for_nextcloud.tar.gz
   news.tar.gz
   notes-v4.12.4.tar.gz
+  notify_push-v1.3.0.tar.gz
   oidc-1.14.7.tar.gz
   onlyoffice.tar.gz
   phonetrack-0.9.1.tar.gz
@@ -104,15 +105,40 @@ if mdata-get data_path 1>/dev/null 2>&1; then
 fi
 
 echo "* Update Nextcloud and restart services"
-# sudo -u www php /var/www/htdocs/nextcloud/current/occ maintenance:mode --on
 chown -R www:www "${DESTDIR}"
+sudo -u www php /var/www/htdocs/nextcloud/current/occ maintenance:mode --on
 sudo -u www php /var/www/htdocs/nextcloud/current/occ upgrade
 sudo -u www php /var/www/htdocs/nextcloud/current/occ db:add-missing-indices
 sudo -u www php /var/www/htdocs/nextcloud/current/occ db:add-missing-columns
-sudo -u www php /var/www/htdocs/nextcloud/current/occ maintenance:mode --off
+sudo -u www php /var/www/htdocs/nextcloud/current/occ db:convert-mysql-charset
+sudo -u www php /var/www/htdocs/nextcloud/current/occ maintenance:repair --include-expensive
+sudo -u www php /var/www/htdocs/nextcloud/current/occ db:convert-filecache-bigint --no-interaction
 sudo -u www php /var/www/htdocs/nextcloud/current/occ config:system:set maintenance_window_start --type=integer --value=1
+sudo -u www php /var/www/htdocs/nextcloud/current/occ maintenance:mode --off
 
 svcadm restart svc:/pkgsrc/php-fpm84:default
 svcadm restart nginx
+
+if [[ -d /var/www/htdocs/nextcloud/current/apps/notify_push ]]; then
+  echo "* Install notify_push binary"
+  if [[ ! -f /var/www/htdocs/nextcloud/current/apps/notify_push/bin/x86_64_illumos/notify_push ]]; then
+    (
+      cd /var/www/htdocs/nextcloud/current/apps/notify_push
+      mkdir -p ./bin/x86_64_illumos
+      cp /data/shared/bin/notify_push ./bin/x86_64_illumos/notify_push
+      chown -R www:www .
+    )
+  else
+    echo "  ...skip install, binary already exists"
+  fi
+  svccfg import /opt/local/lib/svc/manifest/notify_push.xml
+  svcadm enable svc:/network/notify-push:default
+  sudo -u www php /var/www/htdocs/nextcloud/current/occ app:enable notify_push
+  
+  if mdata-get server_alias 1>/dev/null 2>&1; then
+    SERVER_NAME=`mdata-get server_name`
+    sudo -u www php /var/www/htdocs/nextcloud/current/occ notify_push:setup "https://${SERVER_NAME}/push"
+  fi
+fi
 
 exit 0

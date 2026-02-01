@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<!DOCTYPE service_bundle SYSTEM '/usr/share/lib/xml/dtd/service_bundle.dtd.1'>
+<service_bundle type='manifest' name='export'>
+  <service name='network/notify-push' type='service' version='0'>
+    <create_default_instance enabled='false'/>
+    <dependency name='fs' grouping='require_all' restart_on='none' type='service'>
+      <service_fmri value='svc:/system/filesystem/local'/>
+    </dependency>
+    <dependency name='networking' grouping='require_all' restart_on='none' type='service'>
+      <service_fmri value='svc:/milestone/network:default'/>
+    </dependency>
+    <method_context project=':default' resource_pool=':default'>
+      <method_credential group='www' limit_privileges=':default' privileges=':default' supp_groups=':default' user='www' />
+    </method_context>
+    <exec_method name='start' type='method' exec='/var/www/htdocs/nextcloud/current/apps/notify_push/bin/x86_64_illumos/notify_push --bind 127.0.0.1 /var/www/htdocs/nextcloud/current/config/config.php &amp;' timeout_seconds='60'/>
+    <exec_method name='stop' type='method' exec=':kill' timeout_seconds='60'/>
+    <property_group name='startd' type='framework'>
+      <propval name='ignore_error' type='astring' value='core,signal'/>
+    </property_group>
+    <template>
+      <common_name>
+        <loctext xml:lang='C'>Nextcloud Notify-Push Server</loctext>
+      </common_name>
+      <documentation>
+        <doc_link name='geminabox' uri='hhttps://github.com/nextcloud/notify_push' />
+      </documentation>
+    </template>
+  </service>
+</service_bundle>
