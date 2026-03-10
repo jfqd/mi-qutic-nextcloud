@@ -1,5 +1,8 @@
 # Changelog
 
+## 32.0.6 - unreleased
+
+* update to nextcloud 32.0.6
 * add customcss app
 * add notify_push to nextcloud
 

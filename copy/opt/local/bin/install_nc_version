@@ -39,7 +39,6 @@ NEXTCLOUD_APPS="
   event_update_notification-v2.7.0.tar.gz
   files_automatedtagging-v3.0.2.tar.gz
   files_linkeditor.tar.gz
-  files_mindmap-0.0.33.tar.gz
   forms-v5.2.3.tar.gz
   gpxpod-7.2.4.tar.gz
   imageconverter.tar.gz
