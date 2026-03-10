@@ -88,6 +88,28 @@ chown -R www:www "${DESTDIR}"
 echo "* Remove any mac double files"
 find "${DESTDIR}/current/apps/" -name ._* -exec rm {} \;
 
+if [[ -d /var/www/htdocs/nextcloud/current/apps/notify_push ]]; then
+  echo "* Install notify_push binary"
+  if [[ ! -f /var/www/htdocs/nextcloud/current/apps/notify_push/bin/x86_64_illumos/notify_push ]]; then
+    (
+      cd /var/www/htdocs/nextcloud/current/apps/notify_push
+      mkdir -p ./bin/x86_64_illumos
+      cp /data/shared/bin/notify_push ./bin/x86_64_illumos/notify_push
+      chown -R www:www .
+    )
+  else
+    echo "  ...skip install, binary already exists"
+  fi
+  svccfg import /opt/local/lib/svc/manifest/notify_push.xml
+  svcadm enable svc:/network/notify-push:default
+  sudo -u www php /var/www/htdocs/nextcloud/current/occ app:enable notify_push
+  
+  if mdata-get server_name 1>/dev/null 2>&1; then
+    SERVER_NAME=`mdata-get server_name`
+    sudo -u www php /var/www/htdocs/nextcloud/current/occ notify_push:setup "https://${SERVER_NAME}/push"
+  fi
+fi
+
 if [[ -z "${PREVIOUS_RELEASE}" ]]; then
   exit 0
 fi
@@ -119,27 +141,6 @@ sudo -u www php /var/www/htdocs/nextcloud/current/occ maintenance:mode --off
 echo "* Restart php-fpm and nginx services"
 svcadm restart svc:/pkgsrc/php-fpm84:default
 svcadm restart nginx
-
-if [[ -d /var/www/htdocs/nextcloud/current/apps/notify_push ]]; then
-  echo "* Install notify_push binary"
-  if [[ ! -f /var/www/htdocs/nextcloud/current/apps/notify_push/bin/x86_64_illumos/notify_push ]]; then
-    (
-      cd /var/www/htdocs/nextcloud/current/apps/notify_push
-      mkdir -p ./bin/x86_64_illumos
-      cp /data/shared/bin/notify_push ./bin/x86_64_illumos/notify_push
-      chown -R www:www .
-    )
-  else
-    echo "  ...skip install, binary already exists"
-  fi
-  svccfg import /opt/local/lib/svc/manifest/notify_push.xml
-  svcadm enable svc:/network/notify-push:default
-  sudo -u www php /var/www/htdocs/nextcloud/current/occ app:enable notify_push
-  
-  if mdata-get server_name 1>/dev/null 2>&1; then
-    SERVER_NAME=`mdata-get server_name`
-    sudo -u www php /var/www/htdocs/nextcloud/current/occ notify_push:setup "https://${SERVER_NAME}/push"
-  fi
-fi
+svcadm restart svc:/network/notify-push:default
 
 exit 0
