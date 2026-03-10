@@ -103,10 +103,12 @@ if [[ -d /var/www/htdocs/nextcloud/current/apps/notify_push ]]; then
   svccfg import /opt/local/lib/svc/manifest/notify_push.xml
   svcadm enable svc:/network/notify-push:default
   sudo -u www php /var/www/htdocs/nextcloud/current/occ app:enable notify_push
+  sudo -u www php /var/www/htdocs/nextcloud/current/occ notify_push:self-test
   
   if mdata-get server_name 1>/dev/null 2>&1; then
     SERVER_NAME=`mdata-get server_name`
     sudo -u www php /var/www/htdocs/nextcloud/current/occ notify_push:setup "https://${SERVER_NAME}/push"
+    sudo -u www php /var/www/htdocs/nextcloud/current/occ notify_push:self-test
   fi
 fi
 
