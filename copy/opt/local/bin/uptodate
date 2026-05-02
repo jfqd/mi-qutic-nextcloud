@@ -9,14 +9,14 @@
 if mdata-get nginx_fpm 1>/dev/null 2>&1; then
   /usr/sbin/svcadm restart php-fpm84
   /usr/sbin/svcadm restart nginx
-  /opt/local/bin/sed -i "s#/var/log/httpd/access-.*##" /etc/logadm.conf
+  /opt/local/bin/sed -i "s#/var/log/httpd/.*##" /etc/logadm.conf
 else
   /usr/sbin/svcadm restart apache
   /opt/local/bin/sed -i "s#/var/log/nginx/.*##" /etc/logadm.conf
 fi
 
 # remove old php-fpm.log
-/opt/local/bin/sed -i "s#/var/log/php-fpm.log##" /etc/logadm.conf
+/opt/local/bin/sed -i "s#/var/log/php-fpm.log.*##" /etc/logadm.conf
 
 /usr/bin/chown redis:redis /opt/local/etc/redis.conf
 /usr/sbin/svcadm clear redis 2>/dev/null
